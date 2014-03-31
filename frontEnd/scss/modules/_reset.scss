@@ -1,0 +1,16 @@
+body{color:#FFF;word-wrap:break-word; background-color:#131720;overflow-x:hidden; overflow-y: auto;}
+body, input, textarea, select, button {
+	font-family:Heiti SC, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	line-height:1.4;
+}
+body, h1, h2, h3, h4,h5,h6, p, ul, ol, dl, input, select, button, menu, textarea, fieldset,figure{margin:0;}
+button,input,table th,table td,fieldset,textarea{ padding:0; }
+section, article, aside, hgroup, header, footer, nav, dialog, figure, figcaption, details {display:block}
+h1, h2, h3{font-weight:normal; font-size:100%;}
+a{text-decoration:none; color:#1d77b4; }
+ul,ol {padding-left:0;list-style-type:none;}
+dd{ margin-left: 0;}
+img ,button ,fieldset{ border:none;}
+i{ display:inline-block;}
+em{ font-style:normal;}
+table{border-collapse:collapse;border-spacing:0;}

@@ -1,0 +1,69 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($parameter) {
+  -webkit-box-shadow: $parameter;
+     -moz-box-shadow: $parameter;
+      -ms-box-shadow: $parameter;
+          box-shadow: $parameter;
+}
+//box-sizing: content-box | border-box
+@mixin box-sizing($parameter) {
+  -webkit-box-sizing: $parameter;
+     -moz-box-sizing: $parameter;
+      -ms-box-sizing: $parameter;
+          box-sizing: $parameter;
+}
+
+@mixin appearance($parameter) {
+  -webkit-appearance: $parameter;
+     -moz-appearance: $parameter;
+      -ms-appearance: $parameter;
+          appearance: $parameter;
+}
+
+@mixin text-shadow($parameter) {
+  -webkit-text-shadow: $parameter;
+     -moz-text-shadow: $parameter;
+      -ms-text-shadow: $parameter;
+          text-shadow: $parameter;
+}
+//background-origin: border-box | padding-box | content-box
+@mixin background-origin($parameter) {
+  -webkit-background-origin: $parameter;
+     -moz-background-origin: $parameter;
+      -ms-background-origin: $parameter;
+          background-origin: $parameter;
+}
+//background-size: [ <length> | <percentage> | auto ] | cover | contain
+@mixin background-size($parameter) {
+  -webkit-background-size: $parameter;
+     -moz-background-size: $parameter;
+      -ms-background-size: $parameter;
+          background-size: $parameter;
+}
+
+@mixin transition($default-transition: all 0.5s ease-out 0s) {
+  -webkit-transition: $default-transition;
+     -moz-transition: $default-transition;
+       -ms-transition: $default-transition;
+          transition: $default-transition;
+}
+
+@mixin transform($parameter) {
+  -webkit-transform: $parameter;
+     -moz-transform: $parameter;
+       -ms-transform: $parameter;
+          transform: $parameter;
+}
+
+@mixin animation($parameter) {
+  -webkit-animation: $parameter;
+     -moz-animation: $parameter;
+       -ms-animation: $parameter;
+          animation: $parameter;
+}

@@ -1,0 +1,27 @@
+.wrap{
+	max-width:1920px;
+	margin:0 auto;
+}
+
+/* Default wide-screen styles */
+
+// @media all and (max-width: 1024px) {
+//     /* styles for narrow desktop browsers and iPad landscape */
+// }
+
+html,body,textarea,button,input,select{ font-size:24px; }
+
+@media all and (max-width: 1400px) {
+    /* styles for iPhone/Android landscape (and really narrow browser windows) */
+    html,body,textarea,button,input,select{ font-size:20px; }
+}
+
+@media all and (max-width: 1024px) {
+    /* styles for iPhone/Android portrait */
+    html,body,textarea,button,input,select{ font-size:16px; }
+}
+
+// @media all and (max-width: 240px) {
+//     /* styles for smaller devices */
+//     html,body,textarea,button,input,select{ font-size:18px; }
+// }
