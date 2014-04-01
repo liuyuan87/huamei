@@ -4,3 +4,10 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+
+.case-list{ margin-bottom:5em;
+	li{ width:30%; margin-right:3%; display: inline-block; }
+	img{ width:100%;}
+	h3{ color: #FFF; font-size:1.2em; line-height:2; }
+	p{ color: #b1b1b1;}
+}
