@@ -1,4 +1,9 @@
-/* line 4, ../scss/index.scss */
+/* line 3, ../scss/index.scss */
+body {
+  padding-bottom: 4em;
+}
+
+/* line 5, ../scss/index.scss */
 .content .news {
   display: inline-block;
   margin-left: 2.5rem;
@@ -6,23 +11,23 @@
   background-color: rgba(255, 255, 255, 0.22);
   padding: 0 1.2rem;
 }
-/* line 5, ../scss/index.scss */
+/* line 6, ../scss/index.scss */
 .content figure {
   height: 24em;
   margin-bottom: 3.5em;
 }
-/* line 6, ../scss/index.scss */
+/* line 7, ../scss/index.scss */
 .content img {
   float: left;
   margin-bottom: 1%;
   margin-right: 1%;
 }
-/* line 7, ../scss/index.scss */
+/* line 8, ../scss/index.scss */
 .content .item {
   padding: 0 10em 0 0;
   position: relative;
 }
-/* line 8, ../scss/index.scss */
+/* line 9, ../scss/index.scss */
 .content .item img {
   position: absolute;
   right: 0;
@@ -30,7 +35,7 @@
   width: 7em;
   height: 7em;
 }
-/* line 10, ../scss/index.scss */
+/* line 11, ../scss/index.scss */
 .content .title {
   width: 10rem;
   height: 6rem;
@@ -40,7 +45,7 @@
   -ms-background-size: 100% auto;
   background-size: 100% auto;
 }
-/* line 11, ../scss/index.scss */
+/* line 12, ../scss/index.scss */
 .content ul {
   margin: -5rem 0 3.5rem 3.5rem;
   font-size: .8em;
@@ -50,7 +55,7 @@
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
 }
-/* line 12, ../scss/index.scss */
+/* line 13, ../scss/index.scss */
 .content li {
   display: inline-block;
   width: 49%;

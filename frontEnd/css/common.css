@@ -9,7 +9,7 @@ body {
 
 /* line 2, ../scss/modules/_reset.scss */
 body, input, textarea, select, button {
-  font-family: Heiti SC, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  font-family: Hiragino Sans GB, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
   line-height: 1.4;
 }
 
@@ -108,10 +108,9 @@ html, body, textarea, button, input, select {
 /* line 11, ../scss/common.scss */
 body {
   background: url(img/bg.jpg) no-repeat center top;
-  padding-bottom: 4em;
 }
 
-/* line 13, ../scss/common.scss */
+/* line 14, ../scss/common.scss */
 .header {
   margin-bottom: 2em;
   padding: 0 10%;
@@ -120,16 +119,16 @@ body {
   position: relative;
 }
 
-/* line 14, ../scss/common.scss */
+/* line 15, ../scss/common.scss */
 .nav {
   line-height: 4em;
 }
-/* line 15, ../scss/common.scss */
+/* line 16, ../scss/common.scss */
 .nav a {
   color: #FFF;
   margin-right: 0.5rem;
 }
-/* line 16, ../scss/common.scss */
+/* line 17, ../scss/common.scss */
 .nav a:after {
   content: "+";
   color: #921d46;
@@ -137,12 +136,12 @@ body {
   font-size: 1.3rem;
   margin-left: 0.5rem;
 }
-/* line 17, ../scss/common.scss */
+/* line 18, ../scss/common.scss */
 .nav a:last-child:after {
   content: "\0020";
 }
 
-/* line 20, ../scss/common.scss */
+/* line 21, ../scss/common.scss */
 .logo {
   position: absolute;
   right: 5%;
@@ -150,13 +149,13 @@ body {
   width: 20%;
   height: 10rem;
   background: url(img/logo.png) no-repeat;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -ms-background-size: 100% 100%;
-  background-size: 100% 100%;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
 }
 
-/* line 24, ../scss/common.scss */
+/* line 23, ../scss/common.scss */
 .content {
   padding: 0 16%;
   max-width: 1920px;
@@ -164,10 +163,23 @@ body {
 }
 
 /* line 26, ../scss/common.scss */
-.contact {
-  margin-bottom: 2.5em;
+.footer {
+  padding: 2em 0 2em;
+  background-color: #131720;
 }
+
 /* line 27, ../scss/common.scss */
+.contact {
+  margin: 0 15% 2.5em;
+  border-top: 1px solid #ffffff;
+  background: url(img/footer-logo.png) no-repeat center 2em;
+  padding-top: 9em;
+  -webkit-background-size: 32% auto;
+  -moz-background-size: 32% auto;
+  -ms-background-size: 32% auto;
+  background-size: 32% auto;
+}
+/* line 28, ../scss/common.scss */
 .contact a {
   display: inline-block;
   vertical-align: top;
@@ -179,26 +191,26 @@ body {
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 28, ../scss/common.scss */
+/* line 29, ../scss/common.scss */
 .contact a.tencent {
   margin-right: .5rem;
 }
-/* line 29, ../scss/common.scss */
+/* line 30, ../scss/common.scss */
 .contact a.sina {
   background-position: -2em 0;
   margin-right: .5rem;
 }
-/* line 30, ../scss/common.scss */
+/* line 31, ../scss/common.scss */
 .contact a.weixin {
   background-position: -4em 0;
 }
 
-/* line 33, ../scss/common.scss */
+/* line 34, ../scss/common.scss */
 .info {
   margin-bottom: 1.5em;
   min-width: 800px;
 }
-/* line 34, ../scss/common.scss */
+/* line 35, ../scss/common.scss */
 .info i {
   vertical-align: middle;
   margin-right: .5rem;
@@ -210,26 +222,26 @@ body {
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 35, ../scss/common.scss */
+/* line 36, ../scss/common.scss */
 .info i.tel {
   background-position: -2em 0;
 }
-/* line 36, ../scss/common.scss */
+/* line 37, ../scss/common.scss */
 .info i.mail {
   background-position: -4em 0;
 }
-/* line 38, ../scss/common.scss */
+/* line 39, ../scss/common.scss */
 .info li {
   margin-right: 3rem;
   display: inline-block;
 }
-/* line 39, ../scss/common.scss */
+/* line 40, ../scss/common.scss */
 .info li:last-child {
   margin-right: 0;
 }
 
 @media all and (max-width: 1280px) {
-  /* line 45, ../scss/common.scss */
+  /* line 46, ../scss/common.scss */
   .info li {
     text-align: left;
     margin-bottom: .5em;

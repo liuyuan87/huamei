@@ -8,8 +8,9 @@
   color: transparent;
 }
 
-body{ background:url(img/bg.jpg) no-repeat center top; padding-bottom:4em; }
+body{ background:url(img/bg.jpg) no-repeat center top; }
 
+// header start
 .header{ margin-bottom:2em; padding:0 10%; max-width:2280px; min-width:800px; position: relative; }
 .nav{ line-height:4em; 
 	a{ color:#FFF; margin-right:0.5rem; 		
@@ -17,13 +18,13 @@ body{ background:url(img/bg.jpg) no-repeat center top; padding-bottom:4em; }
 		&:last-child:after{ content:"\0020"; }
 	}
 }
-.logo{ position: absolute; right:5%; top:0; width:20%; height:10rem; background:url(img/logo.png) no-repeat; @include background-size(100% 100%);
-	
-}
+.logo{ position: absolute; right:5%; top:0; width:20%; height:10rem; background:url(img/logo.png) no-repeat; @include background-size(100% auto);}
 
 .content{ padding:0 16%; max-width:1920px; min-width:800px;}
 
-.contact{ margin-bottom:2.5em;
+// footer start
+.footer{ padding:2em 0 2em; background-color: #131720;}
+.contact{ margin:0 15% 2.5em; border-top:1px solid #ffffff; background:url(img/footer-logo.png) no-repeat center 2em; padding-top:9em; @include background-size(32% auto);
 	a{ display: inline-block; vertical-align: top; width:2em; height:2em; background:url(img/contact-icon.png) no-repeat; @include background-size(auto 100%);
 		&.tencent{ margin-right:.5rem; }
 		&.sina{ background-position:-2em 0; margin-right:.5rem; }

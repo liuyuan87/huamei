@@ -1,6 +1,25 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "modules/mixins";
 
-@import "compass/reset";
+body{background-image: url(img/magazine-bg.png); background-repeat:repeat; }
+
+
+.images{ margin-bottom:4em;
+	li{ width:33%; display: inline-block; position: relative;}
+	img{ width:100%; vertical-align: top;}
+	time{ position: absolute; text-indent:1em; bottom:0; left:0; width:100%; line-height:2; background-color: rgba(0,0,0,.55);}
+} 
+.title{ margin-bottom:2em;
+	h2{height:2em; color:transparent; background:url(img/magazine-text2.png) no-repeat; @include background-size(auto 100%);}
+	p{ text-indent:3em;}
+}
+.askfor{ width:20em; margin-bottom:2em; padding-bottom:.3em; border-bottom:1px solid #FFF;
+	h2{ float: left; width:6em; height:3em; margin-right:.5em; color:transparent; background:url(img/magazine-text1.png) no-repeat; @include background-size(auto 100%); }
+	p{ line-height:1.5;}
+}
+.notice{ line-height:2; margin-bottom:2em;
+	li{ display: inline-block; vertical-align: top; width:28%; margin:0 3%; text-align: justify;
+		&:last-child{ margin-right:0; }
+	}
+	h3{ font-size:1rem; }
+	p{ margin-bottom:1.5em; font-size:.8rem; }
+}

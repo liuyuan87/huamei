@@ -1,5 +1,6 @@
 @import "modules/mixins";
 
+body{ padding-bottom:4em; }
 .content{
 	.news{ display: inline-block; margin-left:2.5rem; line-height:2.2; background-color: rgba(255,255,255,.22); padding:0 1.2rem; }
 	figure{ height:24em; margin-bottom:3.5em;}
