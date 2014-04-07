@@ -3,8 +3,15 @@ Huamei::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'start#index'
+  
+  get 'not-supported' => 'start#not_supported'
+  get 'intro' => 'start#intro'
+  get 'case' => 'start#case'
+  get 'night' => 'start#night'
+  get 'magazine' => 'start#magazine'
+  get 'contact' => 'start#contact'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
