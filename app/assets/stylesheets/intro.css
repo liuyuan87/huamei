@@ -1,0 +1,111 @@
+/* line 3, ../scss/intro.scss */
+body {
+  background-image: url(/assets/intro-bg.jpg);
+}
+
+/* line 5, ../scss/intro.scss */
+.case-list {
+  margin-bottom: 4em;
+}
+/* line 6, ../scss/intro.scss */
+.case-list li {
+  width: 30%;
+  margin-right: 3%;
+  display: inline-block;
+}
+/* line 7, ../scss/intro.scss */
+.case-list img {
+  width: 100%;
+}
+
+/* line 9, ../scss/intro.scss */
+h2 {
+  margin-bottom: 2em;
+}
+/* line 10, ../scss/intro.scss */
+h2 sup {
+  font-size: .6em;
+  margin-left: .5em;
+}
+
+/* line 13, ../scss/intro.scss */
+.intro {
+  text-indent: 2em;
+  line-height: 2;
+  margin-bottom: 2em;
+  padding-right: 15%;
+}
+
+/* line 14, ../scss/intro.scss */
+.feature {
+  margin-bottom: 4em;
+  padding: 0 6%;
+}
+/* line 15, ../scss/intro.scss */
+.feature li {
+  margin-bottom: .5em;
+}
+/* line 16, ../scss/intro.scss */
+.feature li h3 {
+  margin-left: 3em;
+  position: relative;
+}
+/* line 17, ../scss/intro.scss */
+.feature li h3:after {
+  content: '\0020';
+  background-color: #fff;
+  width: 3em;
+  height: 1px;
+  position: absolute;
+  left: -3em;
+  top: 50%;
+}
+/* line 19, ../scss/intro.scss */
+.feature li:nth-child(2n) {
+  text-align: right;
+}
+/* line 20, ../scss/intro.scss */
+.feature li:nth-child(2n) h3 {
+  margin-right: 3em;
+}
+/* line 21, ../scss/intro.scss */
+.feature li:nth-child(2n) h3:after {
+  left: auto;
+  right: -3em;
+}
+/* line 25, ../scss/intro.scss */
+.feature h3, .feature p {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 26, ../scss/intro.scss */
+.feature h3 {
+  font-size: .8rem;
+  width: 8em;
+  height: 8em;
+  line-height: 8em;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 27, ../scss/intro.scss */
+.feature h3.w5 {
+  width: 5em;
+  height: 5em;
+  line-height: 5em;
+}
+/* line 28, ../scss/intro.scss */
+.feature h3.w7 {
+  width: 7em;
+  height: 7em;
+  line-height: 7em;
+}
+/* line 30, ../scss/intro.scss */
+.feature p {
+  width: 35%;
+  text-align: left;
+}

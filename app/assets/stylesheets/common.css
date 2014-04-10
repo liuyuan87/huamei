@@ -1,0 +1,249 @@
+/* line 1, ../scss/modules/_reset.scss */
+body {
+  color: #FFF;
+  word-wrap: break-word;
+  background-color: #131720;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* line 2, ../scss/modules/_reset.scss */
+body, input, textarea, select, button {
+  font-family: Hiragino Sans GB, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  line-height: 1.4;
+}
+
+/* line 6, ../scss/modules/_reset.scss */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, select, button, menu, textarea, fieldset, figure {
+  margin: 0;
+}
+
+/* line 7, ../scss/modules/_reset.scss */
+button, input, table th, table td, fieldset, textarea {
+  padding: 0;
+}
+
+/* line 8, ../scss/modules/_reset.scss */
+section, article, aside, hgroup, header, footer, nav, dialog, figure, figcaption, details {
+  display: block;
+}
+
+/* line 9, ../scss/modules/_reset.scss */
+h1, h2, h3 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+/* line 10, ../scss/modules/_reset.scss */
+a {
+  text-decoration: none;
+  color: #1d77b4;
+}
+
+/* line 11, ../scss/modules/_reset.scss */
+ul, ol {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+/* line 12, ../scss/modules/_reset.scss */
+dd {
+  margin-left: 0;
+}
+
+/* line 13, ../scss/modules/_reset.scss */
+img, button, fieldset {
+  border: none;
+}
+
+/* line 14, ../scss/modules/_reset.scss */
+i {
+  display: inline-block;
+}
+
+/* line 15, ../scss/modules/_reset.scss */
+em {
+  font-style: normal;
+}
+
+/* line 16, ../scss/modules/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, ../scss/modules/_layout.scss */
+.wrap {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* Default wide-screen styles */
+/* line 12, ../scss/modules/_layout.scss */
+html, body, textarea, button, input, select {
+  font-size: 24px;
+}
+
+@media all and (max-width: 1400px) {
+  /* styles for iPhone/Android landscape (and really narrow browser windows) */
+  /* line 16, ../scss/modules/_layout.scss */
+  html, body, textarea, button, input, select {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 1024px) {
+  /* styles for iPhone/Android portrait */
+  /* line 21, ../scss/modules/_layout.scss */
+  html, body, textarea, button, input, select {
+    font-size: 16px;
+  }
+}
+/* line 5, ../scss/common.scss */
+.hide-text {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+/* line 11, ../scss/common.scss */
+body {
+  background: url(/assets/bg.jpg) no-repeat center top;
+}
+
+/* line 14, ../scss/common.scss */
+.header {
+  margin-bottom: 2em;
+  padding: 0 10%;
+  max-width: 2280px;
+  min-width: 800px;
+  position: relative;
+}
+
+/* line 15, ../scss/common.scss */
+.nav {
+  line-height: 4em;
+}
+/* line 16, ../scss/common.scss */
+.nav a {
+  color: #FFF;
+  margin-right: 0.5rem;
+}
+/* line 17, ../scss/common.scss */
+.nav a:after {
+  content: "+";
+  color: #921d46;
+  vertical-align: middle;
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+}
+/* line 18, ../scss/common.scss */
+.nav a:last-child:after {
+  content: "\0020";
+}
+
+/* line 21, ../scss/common.scss */
+.logo {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  width: 20%;
+  height: 10rem;
+  background: url(/assets/logo.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+/* line 23, ../scss/common.scss */
+.content {
+  padding: 0 16%;
+  max-width: 1920px;
+  min-width: 800px;
+}
+
+/* line 26, ../scss/common.scss */
+.footer {
+  padding: 2em 0 2em;
+  background-color: #131720;
+}
+
+/* line 27, ../scss/common.scss */
+.contact {
+  margin: 0 15% 2.5em;
+  border-top: 1px solid #ffffff;
+  background: url(/assets/footer-logo.png) no-repeat center 2em;
+  padding-top: 9em;
+  -webkit-background-size: 32% auto;
+  -moz-background-size: 32% auto;
+  -ms-background-size: 32% auto;
+  background-size: 32% auto;
+}
+/* line 28, ../scss/common.scss */
+.contact a {
+  display: inline-block;
+  vertical-align: top;
+  width: 2em;
+  height: 2em;
+  background: url(/assets/contact-icon.png) no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  background-size: auto 100%;
+}
+/* line 29, ../scss/common.scss */
+.contact a.tencent {
+  margin-right: .5rem;
+}
+/* line 30, ../scss/common.scss */
+.contact a.sina {
+  background-position: -2em 0;
+  margin-right: .5rem;
+}
+/* line 31, ../scss/common.scss */
+.contact a.weixin {
+  background-position: -4em 0;
+}
+
+/* line 34, ../scss/common.scss */
+.info {
+  margin-bottom: 1.5em;
+  min-width: 800px;
+}
+/* line 35, ../scss/common.scss */
+.info i {
+  vertical-align: middle;
+  margin-right: .5rem;
+  width: 2em;
+  height: 2em;
+  background: url(/assets/info-icon.png) no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  background-size: auto 100%;
+}
+/* line 36, ../scss/common.scss */
+.info i.tel {
+  background-position: -2em 0;
+}
+/* line 37, ../scss/common.scss */
+.info i.mail {
+  background-position: -4em 0;
+}
+/* line 39, ../scss/common.scss */
+.info li {
+  margin-right: 3rem;
+  display: inline-block;
+}
+/* line 40, ../scss/common.scss */
+.info li:last-child {
+  margin-right: 0;
+}
+
+@media all and (max-width: 1280px) {
+  /* line 46, ../scss/common.scss */
+  .info li {
+    text-align: left;
+    margin-bottom: .5em;
+  }
+}

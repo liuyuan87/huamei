@@ -1,0 +1,102 @@
+/* line 3, ../scss/magazine.scss */
+body {
+  background-image: url(/assets/magazine-bg.png);
+  background-repeat: repeat;
+}
+
+/* line 6, ../scss/magazine.scss */
+.images {
+  margin-bottom: 4em;
+}
+/* line 7, ../scss/magazine.scss */
+.images li {
+  width: 33%;
+  display: inline-block;
+  position: relative;
+}
+/* line 8, ../scss/magazine.scss */
+.images img {
+  width: 100%;
+  vertical-align: top;
+}
+/* line 9, ../scss/magazine.scss */
+.images time {
+  position: absolute;
+  text-indent: 1em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 2;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* line 11, ../scss/magazine.scss */
+.title {
+  margin-bottom: 2em;
+}
+/* line 12, ../scss/magazine.scss */
+.title h2 {
+  height: 2em;
+  color: transparent;
+  background: url(/assets/magazine-text2.png) no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  background-size: auto 100%;
+}
+/* line 13, ../scss/magazine.scss */
+.title p {
+  text-indent: 3em;
+}
+
+/* line 15, ../scss/magazine.scss */
+.askfor {
+  width: 20em;
+  margin-bottom: 2em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid #FFF;
+}
+/* line 16, ../scss/magazine.scss */
+.askfor h2 {
+  float: left;
+  width: 6em;
+  height: 3em;
+  margin-right: .5em;
+  color: transparent;
+  background: url(/assets/magazine-text1.png) no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -ms-background-size: auto 100%;
+  background-size: auto 100%;
+}
+/* line 17, ../scss/magazine.scss */
+.askfor p {
+  line-height: 1.5;
+}
+
+/* line 19, ../scss/magazine.scss */
+.notice {
+  line-height: 2;
+  margin-bottom: 2em;
+}
+/* line 20, ../scss/magazine.scss */
+.notice li {
+  display: inline-block;
+  vertical-align: top;
+  width: 28%;
+  margin: 0 3%;
+  text-align: justify;
+}
+/* line 21, ../scss/magazine.scss */
+.notice li:last-child {
+  margin-right: 0;
+}
+/* line 23, ../scss/magazine.scss */
+.notice h3 {
+  font-size: 1rem;
+}
+/* line 24, ../scss/magazine.scss */
+.notice p {
+  margin-bottom: 1.5em;
+  font-size: .8rem;
+}
