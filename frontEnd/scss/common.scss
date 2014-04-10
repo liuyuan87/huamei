@@ -14,7 +14,7 @@ body{ background:url(img/bg.jpg) no-repeat center top; }
 .header{ margin-bottom:2em; padding:0 10%; max-width:2280px; min-width:800px; position: relative; }
 .nav{ line-height:4em; 
 	a{ color:#FFF; margin-right:0.5rem; 		
-		&:after{ content:"+"; color: #921d46; vertical-align: middle; font-size:1.3rem; margin-left:0.5rem; }
+		&:after{ content:"+"; color: #921d46; font-size:1.3rem; margin-left:0.5rem; }
 		&:last-child:after{ content:"\0020"; }
 	}
 }

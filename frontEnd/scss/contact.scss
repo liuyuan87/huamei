@@ -1,6 +1,15 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "modules/mixins";
 
-@import "compass/reset";
+body{background-image: url(img/contact-bg.jpg);}
+.content{text-align: center; padding-top:2em;}
+figure{ padding-bottom:6em;
+	img{ max-width:86%;}
+}
+.contact-us{ display: inline-block; text-align: left; margin-bottom:1.5em;}
+.social{ font-size:.8em; margin-bottom: 3em;
+	i{display: inline-block;margin-right:.2rem; vertical-align: middle; width:2.6em; height:2.5em; background:url(img/contactus-icon.png) no-repeat; @include background-size(100% auto);
+		&.weixin{ background-position:0 -2.5em; }
+		&.tencent{ background-position:0 -5em; }
+	}	
+	li{ display: inline-block; margin-right:1.5em;}
+}
