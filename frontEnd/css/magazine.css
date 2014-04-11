@@ -5,22 +5,22 @@ body {
 }
 
 /* line 6, ../scss/magazine.scss */
-.images {
+.magazine {
   margin-bottom: 4em;
 }
 /* line 7, ../scss/magazine.scss */
-.images li {
+.magazine li {
   width: 33%;
   display: inline-block;
   position: relative;
 }
 /* line 8, ../scss/magazine.scss */
-.images img {
+.magazine img {
   width: 100%;
   vertical-align: top;
 }
 /* line 9, ../scss/magazine.scss */
-.images time {
+.magazine time {
   position: absolute;
   text-indent: 1em;
   bottom: 0;
