@@ -10,7 +10,7 @@ body {
 /* line 2, ../scss/modules/_reset.scss */
 body, input, textarea, select, button {
   font-family: Hiragino Sans GB, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
-  line-height: 1.4;
+  line-height: 2;
 }
 
 /* line 6, ../scss/modules/_reset.scss */
@@ -132,7 +132,6 @@ body {
 .nav a:after {
   content: "+";
   color: #921d46;
-  vertical-align: middle;
   font-size: 1.3rem;
   margin-left: 0.5rem;
 }
