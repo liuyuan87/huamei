@@ -3,10 +3,9 @@
 	<h2 class="news">NEWS</h2>
 	<figure>
 		<img width="59%" height="100%" src="/assets/index1.jpg" alt="" style="background:#000;">
-		<img width="19%" height="49.5%" src="/assets/index2.jpg" alt="" style="background:#000;">
-		<img width="19%" height="49.5%" src="/assets/index3.jpg" alt="" style="background:#000;">
-		<img width="19%" height="49.5%" src="/assets/index4.jpg" alt="" style="background:#000;">
-		<img width="19%" height="49.5%" src="/assets/index5.jpg" alt="" style="background:#000;">
+		<% 1.upto 4 do |i| %>
+		<img width="19%" height="49.5%" src="<%= @index_pics2["img_url"][i.to_s] %>" alt="" style="background:#000;">
+		<% end %>
 	</figure>
 	<div class="item">
 		<h2 class="title hide-text">华美夜色 一周节目</h2>

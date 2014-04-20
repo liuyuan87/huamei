@@ -1,0 +1,42 @@
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/topics">动态</a>
+			<a href="/admin/topics/new">添加 动态</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<table class="stdtable edtable">
+	<thead>
+		<tr>
+			<th width="10%">编号</th>
+			<th>标题</th>
+			<th width="40%">管理</th>
+		</tr>
+	</thead>
+	<tbody>
+	<%
+		if @topics.length>0
+			@topics.each do |topic|
+	%>
+		<tr>
+			<td><%= topic.id %></td>
+			<td><%= topic.title %></td>
+			<td>
+				<a href="/admin/topics/<%= topic.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => topic}, :confirm => "确定删除？", :method => "delete" %>
+			</td>
+		</tr>
+	<%
+			end
+		else
+	%>
+		<tr>
+			<td colspan="3" style="text-align:left;">&nbsp;还没有内容。</td>
+		</tr>
+	<%
+		end
+	%>
+	</tbody>
+</table>
+</div>

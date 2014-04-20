@@ -1,3 +1,4 @@
+<%= javascript_include_tag "kindeditor" %>
 <%= form_tag :action => "intro" do %>	
 <table class="setTable">
 	<thead>
@@ -12,7 +13,7 @@
 		<tr>
 			<td class="data_label">公司介绍：</td>
 			<td class="data_ipt">
-				<textarea name="sys_setting"><%= @setting %></textarea>
+				<textarea name="sys_setting" style="width:400px;height:200px;line-height:22px;"><%= @setting %></textarea>
 			</td>
 		</tr>
 		<tr>

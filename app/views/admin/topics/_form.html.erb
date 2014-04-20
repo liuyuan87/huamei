@@ -1,0 +1,53 @@
+<%= javascript_include_tag "kindeditor" %>
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/topics">动态</a>
+			<a href="/admin/topics/new">添加 动态</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<%= form_for [:admin, @topic] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><%= t %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">标题：</td>
+			<td class="data_ipt">
+				<%= f.text_field :title %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">简介：</td>
+			<td class="data_ipt">
+				<%= f.text_area :intro %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">内容：</td>
+			<td class="data_ipt">
+				<%= kindeditor_tag :content, @topic.content, :window_onload => true, :width => 680, :height => 400 %>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
+</div>
+

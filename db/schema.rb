@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130422041207) do
+ActiveRecord::Schema.define(version: 20130422041211) do
 
   create_table "admins", force: true do |t|
     t.string   "adminname"
@@ -19,6 +19,24 @@ ActiveRecord::Schema.define(version: 20130422041207) do
     t.string   "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "case_tags", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "case_tags_cases", force: true do |t|
+    t.integer "case_tag_id"
+    t.integer "case_id"
+  end
+
+  create_table "cases", force: true do |t|
+    t.string   "title"
+    t.string   "pic"
+    t.string   "intro"
+    t.text     "content"
+    t.integer  "is_hot"
+    t.datetime "created_at"
   end
 
   create_table "kindeditor_assets", force: true do |t|
@@ -42,6 +60,13 @@ ActiveRecord::Schema.define(version: 20130422041207) do
   create_table "sys_settings", force: true do |t|
     t.string "stype"
     t.text   "setting"
+  end
+
+  create_table "topics", force: true do |t|
+    t.string   "title"
+    t.string   "intro"
+    t.text     "content"
+    t.datetime "created_at"
   end
 
 end

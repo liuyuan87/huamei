@@ -1,31 +1,10 @@
 <%= stylesheet_link_tag    "case", media: "all", "data-turbolinks-track" => true %>
 <div class="content">
 	<ul class="case-list">
-		<li>
-			<img src="/assets/huamei1.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li><li>
-			<img src="/assets/huamei2.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li><li>
-			<img src="/assets/huamei3.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li>
-		<li>
-			<img src="/assets/huamei1.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li><li>
-			<img src="/assets/huamei2.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li><li>
-			<img src="/assets/huamei3.jpg" alt="">
-			<h3>亿城集团</h3>
-			<p>视觉设计/ 品牌设计／包装设计</p>
-		</li>
+		<% @cases.each do |c| %><li>
+			<img src="<%= c.pic %>" alt="">
+			<h3><%= c.title %></h3>
+			<p><%= c.tags.gsub(",", "／") %></p>
+		</li><% end -%>
 	</ul>
 </div>

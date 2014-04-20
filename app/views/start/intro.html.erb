@@ -1,18 +1,36 @@
 <%= stylesheet_link_tag    "intro", media: "all", "data-turbolinks-track" => true %>
 <div class="content">
-	<p class="intro">华美时代文化传媒有限公司成立于2013年1月28日，注册资金200万。华美时代文化传媒有限公司是一个年轻的公关团队， 由温哥华公关团队入驻，北京执行团队督导。是一家集硬广资源提供与运营、影视制作与发布、公关活动全案策划与执行、平面广告设计印刷与出版、CG动画制作、创意产品制造于一体的专业化传媒机构。公司致力于设计创意、广告传播、公关活动三大领域。以终端客户为基石，企业为原动力，市场为导向。以诚恳的信念把握现实，以专业的视点着眼于未来，以优质的服务赢得客户的信赖，为客户提供高品质、专业化的服务，与客户携手共同</p>
+	<p class="intro"><%= @intro %></p>
 	<ul class="case-list">
-		<li>
-			<img src="/assets/huamei1.jpg" alt="">
-		</li><li>
-			<img src="/assets/huamei2.jpg" alt="">
-		</li><li>
-			<img src="/assets/huamei3.jpg" alt="">
-		</li>
+		<% 1.upto 3 do |i| -%><li><img src="<%= @intro_pics["img_url"][i.to_s] %>" alt="<%= @intro_pics["title"][i.to_s] %>"></li><% end %>
 	</ul>
 	<h2>公司动态<sup>Company Everts</sup></h2>
 	<ul class="feature">
+		<% @topics.each_with_index do |topic, i| %>
 		<li>			
+			<% tl = topic.title.length %>
+			<% if i % 2 != 0 %>
+				<% if tl <= 5%>
+				<h3 class="w5"><%= topic.title %></h3>
+				<% elsif tl < 7 %>
+				<h3 class="w7"><%= topic.title %></h3>
+				<% else %>
+				<h3><%= topic.title %></h3>
+				<% end %>
+				<p><%= topic.intro %></p>
+			<% else %>
+				<p><%= topic.intro %></p>
+				<% if tl <= 5%>
+				<h3 class="w5"><%= topic.title %></h3>
+				<% elsif tl < 7 %>
+				<h3 class="w7"><%= topic.title %></h3>
+				<% else %>
+				<h3><%= topic.title %></h3>
+				<% end %>
+			<% end %>
+		</li>
+		<% end %>
+		<!--li>			
 			<p>公司结合品牌特性，并结合市定位与需求，以各种载体形式进行塑造和推广，实现品牌在市场的影响力。</p>
 			<h3 class="w5">品牌包装</h3>
 		</li>
@@ -35,6 +53,6 @@
 		<li>
 			<h3 class="w7">创意产品制造</h3>
 			<p>公司致力于创意产品设计，从产品定位策划、工业设计到平面包装，为客户提供最大、最有利的创意价值，让人们享受使用过程，实现创意梦想。</p>
-		</li>
+		</li-->
 	</ul>
 </div>

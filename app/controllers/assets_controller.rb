@@ -8,8 +8,12 @@ class AssetsController < ApplicationController
     case params[:model_type]
     when "index_pics"
       uploader_model = "IndexPicUploader"
+    when "index_pics2"
+      uploader_model = "IndexPicUploader2"
     when "intro_pics"
       uploader_model = "IntroPicUploader"
+    when "case_pics"
+      uploader_model = "CasePicUploader"
     else
       uploader_model = "AssetUploader"
     end

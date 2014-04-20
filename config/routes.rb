@@ -18,8 +18,20 @@ Huamei::Application.routes.draw do
   
   namespace :admin do
     
+    resources :topics
+    
+    resources :cases do
+      member do
+        get :s_hot
+        get :c_hot
+      end
+    end
+    
     get "sys/index_pics"
     post "sys/index_pics"
+    
+    get "sys/index_pics2"
+    post "sys/index_pics2"
     
     get "sys/intro_pics"
     post "sys/intro_pics"
