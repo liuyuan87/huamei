@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130422041211) do
     t.string   "pic"
     t.string   "intro"
     t.text     "content"
-    t.integer  "is_hot"
+    t.integer  "is_hot",     default: 0
     t.datetime "created_at"
   end
 

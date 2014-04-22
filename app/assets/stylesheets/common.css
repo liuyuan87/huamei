@@ -81,21 +81,21 @@ table {
 /* Default wide-screen styles */
 /* line 12, ../scss/modules/_layout.scss */
 html, body, textarea, button, input, select {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 @media all and (max-width: 1400px) {
   /* styles for iPhone/Android landscape (and really narrow browser windows) */
   /* line 16, ../scss/modules/_layout.scss */
   html, body, textarea, button, input, select {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media all and (max-width: 1024px) {
   /* styles for iPhone/Android portrait */
   /* line 21, ../scss/modules/_layout.scss */
   html, body, textarea, button, input, select {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 /* line 5, ../scss/common.scss */
