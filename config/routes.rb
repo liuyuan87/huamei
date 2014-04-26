@@ -3,6 +3,7 @@ Huamei::Application.routes.draw do
   root 'start#index'
   
   get 'not-supported' => 'start#not_supported'
+  get 'start' => 'start#index'
   get 'intro' => 'start#intro'
   get 'case' => 'start#case'
   get 'night' => 'start#night'
