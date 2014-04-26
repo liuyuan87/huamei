@@ -1,0 +1,33 @@
+/* line 3, ../scss/content.scss */
+body {
+  background-image: url(img/content-bg.png);
+  background-repeat: repeat;
+}
+
+/* line 4, ../scss/content.scss */
+.goback {
+  text-align: center;
+  line-height: 3;
+  margin-bottom: 2em;
+}
+/* line 5, ../scss/content.scss */
+.goback a {
+  color: #FFF;
+}
+
+/* line 7, ../scss/content.scss */
+.article {
+  margin-bottom: 5em;
+}
+/* line 8, ../scss/content.scss */
+.article img {
+  max-width: 100%;
+}
+/* line 9, ../scss/content.scss */
+.article h2 {
+  font-size: 1.2em;
+}
+/* line 10, ../scss/content.scss */
+.article p {
+  color: #b1b1b1;
+}

@@ -1,0 +1,11 @@
+@import "modules/mixins";
+
+body{background-image: url(img/content-bg.png); background-repeat:repeat; }
+.goback{ text-align: center; line-height:3; margin-bottom:2em;
+	a{ color: #FFF;}
+}
+.article{ margin-bottom:5em;
+	img{max-width:100%;}
+	h2{ font-size:1.2em;}
+	p{ color:#b1b1b1;}
+}
