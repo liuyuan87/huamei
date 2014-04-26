@@ -1,9 +1,35 @@
-/* line 3, ../scss/index.scss */
-body {
-  padding-bottom: 4em;
+/* line 3, ../scss/modules/_module.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "\0020";
+  line-height: 0;
+}
+/* line 4, ../scss/modules/_module.scss */
+.clearfix:after {
+  clear: both;
 }
 
-/* line 5, ../scss/index.scss */
+/* line 7, ../scss/modules/_module.scss */
+.hide-text {
+  line-height: 0;
+  color: transparent;
+}
+
+/* line 12, ../scss/modules/_module.scss */
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+/* line 4, ../scss/index.scss */
+body {
+  padding-bottom: 4em;
+  background-image: url(img/index-bg.jpg);
+}
+
+/* line 6, ../scss/index.scss */
 .content .news {
   display: inline-block;
   margin-left: 2.5rem;
@@ -11,23 +37,23 @@ body {
   background-color: rgba(255, 255, 255, 0.22);
   padding: 0 1.2rem;
 }
-/* line 6, ../scss/index.scss */
+/* line 7, ../scss/index.scss */
 .content figure {
-  height: 24em;
+  height: 30em;
   margin-bottom: 3.5em;
 }
-/* line 7, ../scss/index.scss */
+/* line 8, ../scss/index.scss */
 .content img {
   float: left;
   margin-bottom: 1%;
   margin-right: 1%;
 }
-/* line 8, ../scss/index.scss */
+/* line 9, ../scss/index.scss */
 .content .item {
   padding: 0 10em 0 0;
   position: relative;
 }
-/* line 9, ../scss/index.scss */
+/* line 10, ../scss/index.scss */
 .content .item img {
   position: absolute;
   right: 0;
@@ -35,7 +61,7 @@ body {
   width: 7em;
   height: 7em;
 }
-/* line 11, ../scss/index.scss */
+/* line 12, ../scss/index.scss */
 .content .title {
   width: 10rem;
   height: 6rem;
@@ -45,7 +71,7 @@ body {
   -ms-background-size: 100% auto;
   background-size: 100% auto;
 }
-/* line 12, ../scss/index.scss */
+/* line 13, ../scss/index.scss */
 .content ul {
   margin: -5rem 0 3.5rem 3.5rem;
   font-size: .8em;
@@ -55,7 +81,7 @@ body {
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
 }
-/* line 13, ../scss/index.scss */
+/* line 14, ../scss/index.scss */
 .content li {
   display: inline-block;
   width: 49%;

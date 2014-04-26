@@ -47,7 +47,7 @@
           background-size: $parameter;
 }
 
-@mixin transition($default-transition: all 0.5s ease-out 0s) {
+@mixin transition($default-transition: all 0.3s ease-out 0s) {
   -webkit-transition: $default-transition;
      -moz-transition: $default-transition;
        -ms-transition: $default-transition;

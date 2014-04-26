@@ -15,11 +15,19 @@ body {
   position: relative;
 }
 /* line 8, ../scss/magazine.scss */
+.magazine li:hover time {
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: background-color 0.25s ease-in 0s;
+  -moz-transition: background-color 0.25s ease-in 0s;
+  -ms-transition: background-color 0.25s ease-in 0s;
+  transition: background-color 0.25s ease-in 0s;
+}
+/* line 10, ../scss/magazine.scss */
 .magazine img {
   width: 100%;
   vertical-align: top;
 }
-/* line 9, ../scss/magazine.scss */
+/* line 11, ../scss/magazine.scss */
 .magazine time {
   position: absolute;
   text-indent: 1em;
@@ -30,11 +38,11 @@ body {
   background-color: rgba(0, 0, 0, 0.55);
 }
 
-/* line 11, ../scss/magazine.scss */
+/* line 13, ../scss/magazine.scss */
 .title {
   margin-bottom: 2em;
 }
-/* line 12, ../scss/magazine.scss */
+/* line 14, ../scss/magazine.scss */
 .title h2 {
   height: 2em;
   color: transparent;
@@ -44,19 +52,19 @@ body {
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 13, ../scss/magazine.scss */
+/* line 15, ../scss/magazine.scss */
 .title p {
   text-indent: 3em;
 }
 
-/* line 15, ../scss/magazine.scss */
+/* line 17, ../scss/magazine.scss */
 .askfor {
   width: 20em;
   margin-bottom: 2em;
   padding-bottom: .3em;
   border-bottom: 1px solid #FFF;
 }
-/* line 16, ../scss/magazine.scss */
+/* line 18, ../scss/magazine.scss */
 .askfor h2 {
   float: left;
   width: 6em;
@@ -69,17 +77,17 @@ body {
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 17, ../scss/magazine.scss */
+/* line 19, ../scss/magazine.scss */
 .askfor p {
   line-height: 1.5;
 }
 
-/* line 19, ../scss/magazine.scss */
+/* line 21, ../scss/magazine.scss */
 .notice {
   line-height: 2;
   margin-bottom: 2em;
 }
-/* line 20, ../scss/magazine.scss */
+/* line 22, ../scss/magazine.scss */
 .notice li {
   display: inline-block;
   vertical-align: top;
@@ -87,15 +95,15 @@ body {
   margin: 0 3%;
   text-align: justify;
 }
-/* line 21, ../scss/magazine.scss */
+/* line 23, ../scss/magazine.scss */
 .notice li:last-child {
   margin-right: 0;
 }
-/* line 23, ../scss/magazine.scss */
+/* line 25, ../scss/magazine.scss */
 .notice h3 {
   font-size: 1rem;
 }
-/* line 24, ../scss/magazine.scss */
+/* line 26, ../scss/magazine.scss */
 .notice p {
   margin-bottom: 1.5em;
   font-size: .8rem;

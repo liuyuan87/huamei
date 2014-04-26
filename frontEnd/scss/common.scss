@@ -1,17 +1,12 @@
 @import "modules/reset";
 @import "modules/layout";
 @import "modules/mixins";
+@import "modules/module";
 
-.hide-text {
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
-}
-
-body{ background:url(img/bg.jpg) no-repeat center top; }
+body{ background-position:center top; background-repeat:no-repeat;}
 
 // header start
-.header{ margin-bottom:2em; padding:0 10%; max-width:2280px; min-width:800px; position: relative; }
+.header{ margin-bottom:6em; padding:0 10%; max-width:1920px; min-width:960px; position: relative; }
 .nav{ line-height:4em; 
 	a{ color:#FFF; margin-right:0.5rem; 		
 		&:after{ content:"+"; color: #921d46; font-size:1.3rem; margin-left:0.5rem; }
@@ -23,12 +18,13 @@ body{ background:url(img/bg.jpg) no-repeat center top; }
 .content{ padding:0 16%; max-width:1920px; min-width:800px;}
 
 // footer start
-.footer{ padding:2em 0 2em; background-color: #131720;}
-.contact{ margin:0 15% 2.5em; border-top:1px solid #ffffff; background:url(img/footer-logo.png) no-repeat center 2em; padding-top:9em; @include background-size(32% auto);
-	a{ display: inline-block; vertical-align: top; width:2em; height:2em; background:url(img/contact-icon.png) no-repeat; @include background-size(auto 100%);
+.footer{ padding:2em 0 2em; background-color: #131720; max-width: 1920px; min-width:1000px;}
+.contact{ margin:0 15% 2.5em; height:3em; border-top:1px solid #ffffff; background:url(img/footer-logo.png) no-repeat center 2em; padding-top:9em; @include background-size(32% auto);
+	a{ display: inline-block; vertical-align: middle; width:2em; height:2em; background:url(img/contact-icon.png) no-repeat; @include background-size(auto 100%);
 		&.tencent{ margin-right:.5rem; }
 		&.sina{ background-position:-2em 0; margin-right:.5rem; }
 		&.weixin{ background-position:-4em 0; }
+		&:hover{ @include transition(all 0.5s ease-in 0s); @include transform(rotateY(360deg));}
 	}
 }
 .info{ margin-bottom:1.5em; min-width:800px;

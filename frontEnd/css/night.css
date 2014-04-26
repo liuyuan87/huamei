@@ -1,68 +1,229 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+/* line 3, ../scss/modules/_module.scss */
+.clearfix:before, .person li:before, .clearfix:after, .person li:after {
+  display: table;
+  content: "\0020";
+  line-height: 0;
+}
+/* line 4, ../scss/modules/_module.scss */
+.clearfix:after, .person li:after {
+  clear: both;
 }
 
-/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+/* line 7, ../scss/modules/_module.scss */
+.hide-text {
+  line-height: 0;
+  color: transparent;
 }
 
-/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
+/* line 12, ../scss/modules/_module.scss */
+.text-overflow, .music li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
-/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* line 4, ../scss/night.scss */
+body {
+  background-image: url(img/night-bg.jpg);
+  background-repeat: repeat;
 }
 
-/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
+/* line 5, ../scss/night.scss */
+.content {
+  padding: 0 10%;
+}
+
+/* line 9, ../scss/night.scss */
+.col {
+  width: 30%;
+  margin-left: 3%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 10, ../scss/night.scss */
+.col:first-child {
+  margin-left: 0;
+}
+
+/* line 12, ../scss/night.scss */
+.broadcast {
+  margin: 0 20% 7em 10%;
+  position: relative;
+  padding-top: 6em;
+}
+/* line 13, ../scss/night.scss */
+.broadcast h2 {
+  width: 4em;
+  height: 10em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(img/night-logo.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+/* line 15, ../scss/night.scss */
+.broad {
+  float: right;
+}
+/* line 16, ../scss/night.scss */
+.broad h3 {
+  line-height: 3;
+  font-size: 1.2em;
+  background-color: #921d46;
+  text-indent: 1em;
+  position: relative;
+}
+/* line 17, ../scss/night.scss */
+.broad h3:after {
+  content: "\0020";
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  bottom: -1.2em;
+  left: 1em;
+  background: url(img/trans.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
+}
+/* line 19, ../scss/night.scss */
+.broad ul {
+  margin: 3em 0 0 3em;
+}
+
+/* line 21, ../scss/night.scss */
+.weixin-sao {
+  width: 20em;
+  height: 12em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/* line 22, ../scss/night.scss */
+.weixin-sao img {
+  max-width: 100%;
+}
+
+/* line 24, ../scss/night.scss */
+.music {
+  margin-bottom: 5em;
+}
+/* line 25, ../scss/night.scss */
+.music h4 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+/* line 27, ../scss/night.scss */
+.music p {
+  text-align: justify;
+}
+
+/* line 29, ../scss/night.scss */
+.person {
+  margin: 0 20% 5em;
+  min-width: 900px;
+  text-align: center;
+}
+/* line 30, ../scss/night.scss */
+.person li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 32%;
+  cursor: pointer;
+  position: relative;
+}
+/* line 31, ../scss/night.scss */
+.person li:nth-child(2n) {
+  margin-left: 5%;
+}
+/* line 32, ../scss/night.scss */
+.person li:nth-child(2n) img {
+  margin-right: 0;
+}
+/* line 34, ../scss/night.scss */
+.person li.active {
+  background-color: #000;
+  width: 100%;
+  padding: 2em 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+/* line 35, ../scss/night.scss */
+.person li.active div {
+  display: inline-block;
+}
+/* line 36, ../scss/night.scss */
+.person li.active img {
+  max-width: 35%;
+}
+/* line 37, ../scss/night.scss */
+.person li.active strong {
+  display: none;
+}
+/* line 38, ../scss/night.scss */
+.person li.active:nth-child(2n) {
+  margin-left: 0;
+}
+/* line 39, ../scss/night.scss */
+.person li.active:nth-child(2n) img {
+  margin-left: 4%;
+}
+/* line 43, ../scss/night.scss */
+.person strong {
+  font-size: 2em;
   font-weight: normal;
-  vertical-align: middle;
+  white-space: nowrap;
+  line-height: 2;
+  padding: 0 1em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -1em;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-
-/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
+/* line 44, ../scss/night.scss */
+.person h3 {
+  font-size: 2em;
 }
-/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
+/* line 45, ../scss/night.scss */
+.person a {
+  position: absolute;
+  right: 0;
+  top: 1em;
+  width: 6em;
+  height: 2em;
+  background: url(img/follow.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
 }
-
-/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
+/* line 46, ../scss/night.scss */
+.person img {
+  max-width: 100%;
+  margin-right: 4%;
+  vertical-align: top;
 }
-
-/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
+/* line 47, ../scss/night.scss */
+.person div {
+  display: none;
+  width: 50%;
+  text-align: justify;
+  position: relative;
+}
+/* line 48, ../scss/night.scss */
+.person p {
+  font-size: .8em;
+  color: #d5d7d9;
 }

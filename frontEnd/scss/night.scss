@@ -1,1 +1,49 @@
 @import "modules/mixins";
+@import "modules/module";
+
+body{background-image: url(img/night-bg.jpg); background-repeat:repeat; }
+.content{ padding:0 10%; }
+
+
+.music-share{}
+.col{ width: 30%;margin-left: 3%;display: inline-block; vertical-align: top;
+	&:first-child{ margin-left:0; }
+}
+.broadcast{ margin:0 20% 7em 10%; position: relative; padding-top:6em;
+	h2{ width:4em; height:10em; position: absolute; left:0; top:0; background: url(img/night-logo.png) no-repeat; @include background-size(100% auto);}
+}
+.broad{ float: right;  
+	h3{ line-height:3; font-size:1.2em; background-color: #921d46; text-indent:1em; position: relative;
+		&:after{ content:"\0020"; width:1.5em; height:1.5em; position: absolute; bottom:-1.2em; left:1em; background:url(img/trans.png) no-repeat; @include background-size(100% auto);}
+	}
+	ul{margin:3em 0 0 3em;}
+}
+.weixin-sao{ width:20em; height:12em; position: absolute; right:0; bottom:0;
+	img{ max-width:100%;}
+}
+.music{ margin-bottom:5em;
+	h4{ margin-bottom:1em; font-size:1.2em;}
+	li{ @extend .text-overflow; }
+	p{ text-align: justify; }
+}
+.person{ margin:0 20% 5em; min-width:900px; text-align: center;
+	li{ @extend .clearfix; @include box-sizing(border-box); display:inline-block; width:32%; cursor: pointer; position: relative; 
+		&:nth-child(2n){ margin-left:5%;
+			img{ margin-right:0; }
+		}
+		&.active{ background-color: #000; width:100%; padding:2em 0; @include transition(all 0.3s ease-out 0s);
+			div{ display:inline-block;}
+			img{ max-width:35%;}
+			strong{display:none;}
+			&:nth-child(2n){ margin-left:0;
+				img{ margin-left:4%; }
+			}
+		}
+	}
+	strong{ font-size:2em; font-weight: normal; white-space: nowrap; line-height:2; padding:0 1em; position: absolute; top:50%; right:0; margin-top:-1em; background-color:rgba(0,0,0,.7); }
+	h3{ font-size:2em; }
+	a{ position: absolute; right:0; top:1em; width:6em; height:2em; background: url(img/follow.png) no-repeat; @include background-size(100% auto); }
+	img{ max-width:100%; margin-right:4%; vertical-align: top; }
+	div{ display:none; width:50%; text-align: justify; position: relative; }
+	p{ font-size:.8em; color: #d5d7d9; }
+}

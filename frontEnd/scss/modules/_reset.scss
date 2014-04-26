@@ -7,7 +7,8 @@ body, h1, h2, h3, h4,h5,h6, p, ul, ol, dl, input, select, button, menu, textarea
 button,input,table th,table td,fieldset,textarea{ padding:0; }
 section, article, aside, hgroup, header, footer, nav, dialog, figure, figcaption, details {display:block}
 h1, h2, h3{font-weight:normal; font-size:100%;}
-a{text-decoration:none; color:#1d77b4; }
+a{text-decoration:none; color:#FFF; }
+a:hover{ color: #b1b1b1; }
 ul,ol {padding-left:0;list-style-type:none;}
 dd{ margin-left: 0;}
 img ,button ,fieldset{ border:none;}
