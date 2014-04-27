@@ -1,4 +1,5 @@
 # Require any additional compass plugins here.
+require "fssm"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
