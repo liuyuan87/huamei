@@ -6,6 +6,7 @@
 <title>华美时代</title>
 <link rel="stylesheet" href="css/common.css"/>
 <link rel="stylesheet" href="css/night.css"/>
+<link rel="stylesheet" href="css/music.css"/>
 <!--[if lte IE 7]>
 <script type="text/javascript">
     if(!navigator.userAgent.match(/MSIE 10/)){
@@ -16,52 +17,79 @@
 </head>
 <body>
 <!--#include file="common/header.html" -->
-<div class="content">
-	<h2 class="night-logo hide-text">夜色</h2>
-	<h3>最新广播主题</h3>
-	<ul>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-		<li>2014.02.24 爱情与事业</li>
-	</ul>
-	<div class="weixin">微信公共帐号</div>
-	<h4>||华语音乐榜</h4>	
-	<ol>
-		<li>尚雯婕、魏晨 《Good Night My Love》</li>
-		<li>苏醒 《Dream》</li>
-		<li>张靓颖 《微笑以后》</li>
-		<li>周笔畅 《自得其乐》</li>
-		<li>尚雯婕、魏晨 《Good Night My Love》</li>
-		<li>苏醒 《Dream》</li>
-		<li>张靓颖 《微笑以后》</li>
-		<li>周笔畅 《自得其乐》</li>
-	</ol>
-	<h4>||外语音乐榜</h4>
-	<ol>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-		<li>Miley Cyrus 《Wrecking Ball》</li>
-	</ol>
-	<h4>||《华美夜色》简介</h4>
-	<p>华美时代文化传媒有限公司旗下携手FM102.1通化城乡广播共同打造——《华美夜色》。这是一档时尚娱乐综艺节目，以活跃气氛、调节情绪、展现学子的青春风采为主要内容。希望大家在有时明媚有时阴晦的天气里，始终保持不变的笑容和快乐的心情。 每晚九点到十点 主播明泽&名嘴和您一起共同体验美好生活</p>
+<div class="broadcast clearfix">
+	<h2 class="hide-text">夜色</h2>
+	<div class="music-play">
+		<div id="player">
+			<div class="cover"></div>
+			<div class="ctrl">
+				<div class="tag">
+					<strong>Title</strong>
+					<span class="artist">Artist</span>
+					<span class="album">Album</span>
+				</div>
+				<div class="control">				
+					<span title="上一首" class="rewind icon"></span>
+					<span title="播放/暂停" class="playback icon"></span>
+					<span title="下一曲" class="fastforward icon"></span>					
+				</div>
+				<div class="progress">
+					<div class="slider">
+						<div class="pace"></div>
+					</div>
+					<div class="timer">0:00</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="broad">
+		<h3>|| 最新广播主题</h3>
+		<ul id="playlist">
+		</ul>		
+	</div>
+	<div class="weixin-sao"><img src="images/weixin.png" alt="微信公共帐号"></div>
+</div>
+<div class="content music">
+	<div class="col">
+		<h4>|| 华语音乐榜</h4>	
+		<ol>
+			<li>尚雯婕、魏晨 《Good Night My Love》</li>
+			<li>苏醒 《Dream》</li>
+			<li>张靓颖 《微笑以后》</li>
+			<li>周笔畅 《自得其乐》</li>
+			<li>尚雯婕、魏晨 《Good Night My Love》</li>
+			<li>苏醒 《Dream》</li>
+			<li>张靓颖 《微笑以后》</li>
+			<li>周笔畅 《自得其乐》</li>
+		</ol>
+	</div>
+	<div class="col">
+		<h4>|| 外语音乐榜</h4>
+		<ol>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+			<li>Miley Cyrus 《Wrecking Ball》</li>
+		</ol>
+	</div>
+	<div class="col">
+		<h4>|| 《华美夜色》简介</h4>
+		<p>华美时代文化传媒有限公司旗下携手FM102.1通化城乡广播共同打造——《华美夜色》。这是一档时尚娱乐综艺节目，以活跃气氛、调节情绪、展现学子的青春风采为主要内容。希望大家在有时明媚有时阴晦的天气里，始终保持不变的笑容和快乐的心情。 每晚九点到十点 主播明泽&名嘴和您一起共同体验美好生活</p>
+	</div>
 </div>
 <div class="person">
-	<ul class="person-intro">
+	<ul id="personIntro" class="person-intro">
 		<li>
-			<img src="images/mz.jpg" alt="明泽照片">
+			<strong>明泽</strong>
+			<img src="images/mz.jpg" alt="明泽照片">			
 			<div>
-				<h3>名字</h3>
-				<a href="">关注微博</a>
-				<p>昵称：明泽<br>
+				<h3>明泽</h3>
+				<a class="hide-text" href="">关注微博</a>
+				<p>
 				出生地：美丽的小城集安<br>
 				生日：4月12日<br>
 				星座：白羊座<br>
@@ -80,12 +108,11 @@
 				对《华美夜色》的评价：《华美夜色》是全力制作及我</p>
 			</div>
 		</li>
-		<li>
-			<img src="images/xsb.jpg" alt="照片">
+		<li>	
+			<strong>薛书博</strong>	
 			<div>
-				<h3>名字</h3>
-				<p>姓名：薛书博<br>
-				昵称：名嘴<br>
+				<h3>薛书博</h3>
+				<p>
 				出生地：通化<br>
 				生日：10月18日<br>
 				星座：天秤座<br>
@@ -105,12 +132,14 @@
 				人生怎样才能算有价值：做自己想做的，爱自己想爱的，快乐幸福就好。<br>
 				座右铭：人求上进早读书，鸟欲高飞先震翅。</p>
 			</div>
-		</li>
-		
+			<img src="images/xsb.jpg" alt="照片">		
+		</li>	
 	</ul>
 </div>
 <!--#include file="common/footer.html" -->
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/night.js"></script>
+<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="js/music.js"></script>
 </body>
 </html>
