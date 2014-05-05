@@ -3,7 +3,7 @@ class CreateCases < ActiveRecord::Migration
     create_table :cases do |t|
       t.string :title
       t.string :pic
-      t.string :intro
+      # t.string :intro
       t.text :content
       t.integer :is_hot, :default => 0
       

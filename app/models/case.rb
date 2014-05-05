@@ -20,5 +20,9 @@ class Case < ActiveRecord::Base
       self.case_tags << tag
     end
   end
+  
+  def show_url
+    "/case/#{self.title}"
+  end
 
 end

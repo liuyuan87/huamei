@@ -2,7 +2,7 @@
 <div class="content">
 	<ul class="case-list">
 		<% @cases.each do |c| %><li>
-			<img src="<%= c.pic %>" alt="">
+			<a href="<%= c.show_url %>"><img src="<%= c.pic %>" alt=""></a>
 			<h3><%= c.title %></h3>
 			<p><%= c.tags.gsub(",", "／") %></p>
 		</li><% end -%>

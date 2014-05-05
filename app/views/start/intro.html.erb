@@ -10,23 +10,11 @@
 		<li>			
 			<% tl = topic.title.length %>
 			<% if i % 2 != 0 %>
-				<% if tl <= 5%>
-				<h3 class="w5"><%= topic.title %></h3>
-				<% elsif tl < 7 %>
-				<h3 class="w7"><%= topic.title %></h3>
-				<% else %>
-				<h3><%= topic.title %></h3>
-				<% end %>
+				<% if tl <= 5%><h3 class="w5"><% elsif tl < 7 %><h3 class="w7"><% else %><h3><% end %><a href="<%= topic.show_url %>"><%= topic.title %></a></h3>
 				<p><%= topic.intro %></p>
 			<% else %>
 				<p><%= topic.intro %></p>
-				<% if tl <= 5%>
-				<h3 class="w5"><%= topic.title %></h3>
-				<% elsif tl < 7 %>
-				<h3 class="w7"><%= topic.title %></h3>
-				<% else %>
-				<h3><%= topic.title %></h3>
-				<% end %>
+				<% if tl <= 5%><h3 class="w5"><% elsif tl < 7 %><h3 class="w7"><% else %><h3><% end %><a href="<%= topic.show_url %>"><%= topic.title %></a></h3>
 			<% end %>
 		</li>
 		<% end %>
