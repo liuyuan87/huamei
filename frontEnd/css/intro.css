@@ -20,7 +20,8 @@ body {
 
 /* line 9, ../scss/intro.scss */
 h2 {
-  margin-bottom: 2em;
+  font-size:1.2em;
+  margin-bottom:1em;
 }
 /* line 10, ../scss/intro.scss */
 h2 sup {
@@ -35,7 +36,8 @@ h2 sup {
   margin-bottom: 2em;
   padding-right: 15%;
 }
-
+.event-list{ margin-bottom:5em; padding:0 6%;}
+.event-list li{display: inline-block;width: 49%;line-height: 1.4;margin-bottom: .5rem;}
 /* line 14, ../scss/intro.scss */
 .feature {
   margin-bottom: 4em;

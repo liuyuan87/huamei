@@ -11,6 +11,9 @@ h2{ margin-bottom: 2em;
 }
 
 .intro{ text-indent:2em; line-height:2;margin-bottom:2em; padding-right:15%;}
+.event-list{ margin-bottom:2em;
+	li{display: inline-block;width: 49%;line-height: 1.4;margin-bottom: .5rem;}
+}
 .feature{ margin-bottom:4em; padding:0 6%;
 	li{ margin-bottom:.5em;
 		h3{ margin-left:3em; position: relative;
