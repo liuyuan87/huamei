@@ -10,6 +10,7 @@ Huamei::Application.routes.draw do
   get 'case/(:id)' => 'start#case_info'
   get 'night' => 'start#night'
   get 'magazine' => 'start#magazine'
+  get 'magazine/(:id)' => 'start#magazine_detail'
   get 'contact' => 'start#contact'
   
   

@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag    "slider", media: "all", "data-turbolinks-track" => true %>
+<div class="content">
+	<div class="slider">
+		<ul class="slides">
+			<li class="slide"><img class="slide" src="/assets//magazine1.jpg"/><img class="slide" src="/assets//magazine2.jpg"/></li>
+			<li class="slide"><img class="slide" src="/assets//magazine1.jpg"/><img class="slide" src="/assets//magazine2.jpg"/></li>
+			<li class="slide"><img class="slide" src="/assets//magazine3.jpg"/><img class="slide" src="/assets//magazine1.jpg"/></li>
+		</ul>
+	</div>
+</div>
+
+<script src="/assets/jquery.glide.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.slider').glide({
+		autoplay: false,
+		animationDuration: 300,
+		circular: false,
+		touchDistance: 80
+	});
+});
+</script>
