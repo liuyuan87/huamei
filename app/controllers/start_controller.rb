@@ -43,6 +43,42 @@ class StartController < ApplicationController
     end
   end
   
+  def magazine
+    @magazines = Magazine.all :order => "id desc"
+  end
+  
+  def magazine_detail
+    @magazine = Magazine.find(params[:id])
+    
+    @rel_path = "/upload/magazine/" + @magazine.folder + "/imgs/"
+    @current_path = "#{Rails.public_path}" + @rel_path
+    
+    @order = "name"
+    
+    if !File.exist?(@current_path) || !File.directory?(@current_path)
+      render :text => "Directory does not exist."
+      return
+    end
+    @file_list = []
+    Dir.foreach(@current_path) do |filename|  
+      hash = {}
+      if filename != "." and filename != ".." and filename != ".DS_Store"
+        file = @current_path + filename
+        hash[:is_dir] = false
+        hash[:has_file] = false
+        hash[:filesize] = File.size(file)
+        hash[:dir_path] = ""
+        file_ext = file.gsub(/.*\./,"")
+        hash[:filetype] = file_ext
+        hash[:filename] = filename
+        hash[:datetime] = File.mtime(file).to_s(:db)
+        @file_list << hash
+      end
+    end
+
+    @file_list.sort! {|a, b| a["file#{@order}".to_sym] <=> b["file#{@order}".to_sym]}
+  end
+  
   def contact
     @contact = JSON.parse(SysSetting.find_by_stype("contact").setting)
   end

@@ -33,6 +33,8 @@ Huamei::Application.routes.draw do
     end
     resources :case_tags
     
+    resources :magazines
+    
     get "sys/index_pics"
     post "sys/index_pics"
     

@@ -2,9 +2,7 @@
 <div class="content">
 	<div class="slider">
 		<ul class="slides">
-			<li class="slide"><img class="slide" src="/assets//magazine1.jpg"/><img class="slide" src="/assets//magazine2.jpg"/></li>
-			<li class="slide"><img class="slide" src="/assets//magazine1.jpg"/><img class="slide" src="/assets//magazine2.jpg"/></li>
-			<li class="slide"><img class="slide" src="/assets//magazine3.jpg"/><img class="slide" src="/assets//magazine1.jpg"/></li>
+			<% @file_list.each_with_index do |f, i| %><% if i % 2 == 0 %><li class="slide"><% end -%><img class="slide" src="<%= @rel_path + f[:filename] %>" /><% if i % 2 != 0 %></li><% end -%><% end %>
 		</ul>
 	</div>
 </div>

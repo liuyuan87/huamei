@@ -14,6 +14,8 @@ class AssetsController < ApplicationController
       uploader_model = "IntroPicUploader"
     when "case_pics"
       uploader_model = "CasePicUploader"
+    when "magazine_covers"
+      uploader_model = "MagazineCoverUploader"
     when "map"
       uploader_model = "MapUploader"
     else

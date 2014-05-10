@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130422041211) do
+ActiveRecord::Schema.define(version: 20130422041212) do
 
   create_table "admins", force: true do |t|
     t.string   "adminname"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130422041211) do
     t.string   "pic"
     t.string   "intro"
     t.text     "content"
-    t.integer  "is_hot",     default: 0
+    t.integer  "is_hot"
     t.datetime "created_at"
   end
 
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20130422041211) do
     t.string   "file_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "magazines", force: true do |t|
+    t.string   "title"
+    t.string   "cover"
+    t.string   "folder"
+    t.string   "zip"
+    t.datetime "created_at"
   end
 
   create_table "run_logs", force: true do |t|
