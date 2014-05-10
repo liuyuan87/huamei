@@ -1,0 +1,136 @@
+<%= javascript_include_tag "kindeditor" %>
+<%= form_tag :action => "contact" do %>	
+<table class="setTable">
+	<thead>
+		<tr>
+			<th colspan="2">联系我们</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">地址：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][addr]" value="<%= @setting["addr"] if @setting["addr"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">电话：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][tel]" value="<%= @setting["tel"] if @setting["tel"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">传真：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][fax]" value="<%= @setting["fax"] if @setting["fax"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">企业邮箱：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][email]" value="<%= @setting["email"] if @setting["email"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">微博：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][weibo]" value="<%= @setting["weibo"] if @setting["weibo"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">微博链接：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][weibo_link]" value="<%= @setting["weibo_link"] if @setting["weibo_link"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">微信：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][weixin]" value="<%= @setting["weixin"] if @setting["weixin"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">QQ：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][qq]" value="<%= @setting["qq"] if @setting["qq"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">地图：</td>
+			<td>
+				<input type="text" name="sys_setting[setting][map]" value="<%= @setting["map"] if @setting["map"] %>" class="new_ipt" />
+				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button viewServer" name="viewServer" value="图片空间"></span>
+				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button upload" name="upload" value="本地上传"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="确定" />
+			</td>
+		</tr>
+		<% if !@result.nil? %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">result：</td>
+			<td class="data_result">保存成功。</td>
+		</tr>
+		<% end %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function(){	
+	var editor = new KindEditor.EditorClass();
+	editor.fileManagerJson = "/file_manager_json";
+	editor.uploadJson = "/upload_asset";
+	editor.extraFileUploadParams = {
+		'model_type' : 'map'
+	};
+	KindEditor.loadStyle(editor.themesPath + 'default/default.css');
+	KindEditor.loadScript(editor.langPath + editor.langType + '.js');
+	
+	$('.viewServer').click(function(){
+		var p = this;
+		editor.loadPlugin('filemanager', function() {
+			editor.plugin.filemanagerDialog({
+				viewType : 'VIEW',
+				dirName : 'map',
+				clickFn : function(url, title) {
+					if (editor.dialogs.length > 0) {
+						$(p).parent().siblings('input').val(url);
+						editor.hideDialog();
+					}
+				}
+			});
+		});
+	});
+	
+	$('.upload').click(function(){
+		var p = this;
+		editor.loadPlugin('image', function() {
+			editor.plugin.imageDialog({
+				showRemote: false,
+				clickFn : function(url, title, width, height, border, align) {
+					$(p).parent().siblings('input').val(url);
+					setTimeout(function() {
+						editor.hideDialog().focus();
+					}, 0);
+				}
+			});
+		});
+	});
+		
+});
+//]]>
+</script>

@@ -2,8 +2,7 @@
 <div class="content">
 	<div class="goback"><a href="/case">&lt;　　　返回　　　&gt;</a></div>
 	<div class="article">
-		<img src="/assets/case-pic1.jpg" alt="">
 		<h2><%= @case.title %></h2>
-		<p><%= @case.content.html_safe %></p>
+		<%= @case.content.html_safe %>
 	</div>
 </div>

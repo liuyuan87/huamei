@@ -1,10 +1,15 @@
 <%= stylesheet_link_tag    "case", media: "all", "data-turbolinks-track" => true %>
 <div class="content">
+	<% if !@case_tag.blank? %>
+	<h2><%= @case_tag.name %></h2>
+	<% else %>
+	<h2>所有案例</h2>
+	<% end %>
 	<ul class="case-list">
 		<% @cases.each do |c| %><li>
 			<a href="<%= c.show_url %>"><img src="<%= c.pic %>" alt=""></a>
 			<h3><%= c.title %></h3>
-			<p><%= c.tags.gsub(",", "／") %></p>
+			<p><%= c.case_tags.map{|t|"<a href=\"/case_tag/" + t.name + "\">" + t.name + "</a>"}.join("／").html_safe %></p>
 		</li><% end -%>
 	</ul>
 </div>

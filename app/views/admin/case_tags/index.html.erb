@@ -1,8 +1,8 @@
 <div class="nav">
 	<div class="list-opts">
 		<div class="nav-links">
-			<a href="/admin/topics">公司动态</a>
-			<a href="/admin/topics/new">添加 动态</a>
+			<a href="/admin/case_tags">案例标签</a>
+			<a href="/admin/case_tags/new">添加 案例标签</a>
 		</div>
 	</div>
 </div>
@@ -11,20 +11,20 @@
 	<thead>
 		<tr>
 			<th width="10%">编号</th>
-			<th>标题</th>
+			<th>名称</th>
 			<th width="40%">管理</th>
 		</tr>
 	</thead>
 	<tbody>
 	<%
-		if @topics.length>0
-			@topics.each do |topic|
+		if @case_tags.length>0
+			@case_tags.each do |t|
 	%>
 		<tr>
-			<td><%= topic.id %></td>
-			<td><%= topic.title %></td>
+			<td><%= t.id %></td>
+			<td><%= t.name %></td>
 			<td>
-				<a href="/admin/topics/<%= topic.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => topic}, :confirm => "确定删除？", :method => "delete" %>
+				<a href="/admin/case_tags/<%= t.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => t}, :confirm => "确定删除？", :method => "delete" %>
 			</td>
 		</tr>
 	<%

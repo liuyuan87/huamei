@@ -1,6 +1,6 @@
-class CreateTopics < ActiveRecord::Migration
+class CreateMagazines < ActiveRecord::Migration
   def change
-    create_table :topics do |t|
+    create_table :magazines do |t|
       t.string :title
       t.text :content
       

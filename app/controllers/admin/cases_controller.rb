@@ -5,10 +5,12 @@ class Admin::CasesController < Admin::Backend
   end
 
   def new
+    @case_tags = CaseTag.all
     @case = Case.new
   end
 
   def edit
+    @case_tags = CaseTag.all
     @case = Case.find(params[:id])
   end
   

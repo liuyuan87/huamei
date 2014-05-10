@@ -2,7 +2,7 @@
 <div class="nav">
 	<div class="list-opts">
 		<div class="nav-links">
-			<a href="/admin/cases">案例</a>
+			<a href="/admin/cases">案例管理</a>
 			<a href="/admin/cases/new">添加 案例</a>
 		</div>
 	</div>
@@ -48,7 +48,9 @@
 		<tr>
 			<td class="data_label">标签：</td>
 			<td class="data_ipt">
-				<input type="text" name="tags" value="<%= @case.tags %>" />
+				<% @case_tags.each do |tag| %>
+				<label><input type="checkbox" name="tags[]" class="checkbox" value="<%= tag.name %>"<% if @case.tags.include? tag.name %> checked="checked"<% end %> /><%= tag.name %></label>
+				<% end %>
 			</td>
 		</tr>
 		<tr>

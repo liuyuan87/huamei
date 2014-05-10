@@ -208,8 +208,8 @@ body {
   position: absolute;
   right: 0;
   top: 1em;
-  width: 6em;
-  height: 2em;
+  width: 6rem;
+  height: 2rem;
   background: url(/assets/follow.png) no-repeat;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;

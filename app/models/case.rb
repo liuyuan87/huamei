@@ -9,7 +9,6 @@ class Case < ActiveRecord::Base
   
   def save_tags(tags)
     self.case_tags = []
-    tags = tags.gsub(/，/, ',').split(',')
     tags.each do |t|
       tag = CaseTag.find_by_name(t)
       if tag.nil?

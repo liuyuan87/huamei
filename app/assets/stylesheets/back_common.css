@@ -52,6 +52,7 @@ body{background:#FEFEFE;}
 
 .navtree{position:absolute;top:0;bottom:0;width:201px;}
 .navtree h4{position:relative;padding:10px 0 10px 28px;height:20px;line-height:20px;background:#EEE;font-size:14px;font-weight:bold;color:#333;border-top:1px solid #CCC;border-bottom:1px solid #CCC;}
+.navtree h4 a{color:#333;}
 .navtree h4 i{position:absolute;top:50%;right:18px;display:block;margin-top:-2px;width:0;height:0;font-size:0;border:5px solid #EEE;border-top:5px solid #333;border-bottom:0;}
 .navtree ul{}
 .navtree ul li{}

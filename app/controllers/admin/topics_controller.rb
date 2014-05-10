@@ -1,7 +1,7 @@
 class Admin::TopicsController < Admin::Backend
   
   def index
-    @topics = Topic.all :order => "id asc"
+    @topics = Topic.all :order => "id desc"
   end
 
   def new

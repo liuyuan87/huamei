@@ -8,6 +8,7 @@ Huamei::Application.routes.draw do
   get 'intro/(:id)' => 'start#intro_detail'
   get 'case' => 'start#case'
   get 'case/(:id)' => 'start#case_info'
+  get 'case_tag/(:id)' => 'start#case_tag'
   get 'night' => 'start#night'
   get 'magazine' => 'start#magazine'
   get 'magazine/(:id)' => 'start#magazine_detail'
@@ -30,6 +31,7 @@ Huamei::Application.routes.draw do
         get :c_hot
       end
     end
+    resources :case_tags
     
     get "sys/index_pics"
     post "sys/index_pics"
@@ -42,6 +44,9 @@ Huamei::Application.routes.draw do
     
     get "sys/intro"
     post "sys/intro"
+    
+    get "sys/contact"
+    post "sys/contact"
     
     get "db/index"
     
