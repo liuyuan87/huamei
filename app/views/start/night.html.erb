@@ -91,6 +91,6 @@ Music.playlist = [
 ];
 $(function(){
 	Music.init();
-	Music.loadMusic(0);
+	Music.loadMusic(<%= params[:id].to_i - 1 %>);
 });
 </script>
