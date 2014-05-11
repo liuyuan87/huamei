@@ -43,6 +43,10 @@ class StartController < ApplicationController
     end
   end
   
+  def night
+    @intro = JSON.parse(SysSetting.find_by_stype("nights").setting)
+  end
+  
   def magazine
     @magazines = Magazine.all :order => "id desc"
   end
