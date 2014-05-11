@@ -43,6 +43,12 @@ h2 sup {
   margin-bottom: 4em;
   padding: 0 6%;
 }
+.feature a{
+  color: #000;
+}
+.feature a:hover{
+  color: #000;
+}
 /* line 15, ../scss/intro.scss */
 .feature li {
   margin-bottom: .5em;

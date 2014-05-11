@@ -37,36 +37,41 @@ h1, h2, h3 {
 /* line 10, ../scss/modules/_reset.scss */
 a {
   text-decoration: none;
-  color: #1d77b4;
+  color: #FFF;
 }
 
 /* line 11, ../scss/modules/_reset.scss */
+a:hover {
+  color: #b1b1b1;
+}
+
+/* line 12, ../scss/modules/_reset.scss */
 ul, ol {
   padding-left: 0;
   list-style-type: none;
 }
 
-/* line 12, ../scss/modules/_reset.scss */
+/* line 13, ../scss/modules/_reset.scss */
 dd {
   margin-left: 0;
 }
 
-/* line 13, ../scss/modules/_reset.scss */
+/* line 14, ../scss/modules/_reset.scss */
 img, button, fieldset {
   border: none;
 }
 
-/* line 14, ../scss/modules/_reset.scss */
+/* line 15, ../scss/modules/_reset.scss */
 i {
   display: inline-block;
 }
 
-/* line 15, ../scss/modules/_reset.scss */
+/* line 16, ../scss/modules/_reset.scss */
 em {
   font-style: normal;
 }
 
-/* line 16, ../scss/modules/_reset.scss */
+/* line 17, ../scss/modules/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -84,163 +89,196 @@ html, body, textarea, button, input, select {
   font-size: 20px;
 }
 
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1600px) {
   /* styles for iPhone/Android landscape (and really narrow browser windows) */
   /* line 16, ../scss/modules/_layout.scss */
   html, body, textarea, button, input, select {
     font-size: 16px;
   }
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1300px) {
   /* styles for iPhone/Android portrait */
   /* line 21, ../scss/modules/_layout.scss */
   html, body, textarea, button, input, select {
     font-size: 12px;
   }
 }
-/* line 5, ../scss/common.scss */
+/* line 3, ../scss/modules/_module.scss */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "\0020";
+  line-height: 0;
+}
+/* line 4, ../scss/modules/_module.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 7, ../scss/modules/_module.scss */
 .hide-text {
-  font-size: 0;
   line-height: 0;
   color: transparent;
 }
 
-/* line 11, ../scss/common.scss */
-body {
-  background: url(/assets/bg.jpg) no-repeat center top;
+/* line 12, ../scss/modules/_module.scss */
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
-/* line 14, ../scss/common.scss */
+/* line 6, ../scss/common.scss */
+body {
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* line 9, ../scss/common.scss */
 .header {
-  margin-bottom: 2em;
+  margin-bottom: 6em;
   padding: 0 10%;
-  max-width: 2280px;
-  min-width: 800px;
+  max-width: 1920px;
+  min-width: 960px;
   position: relative;
 }
 
-/* line 15, ../scss/common.scss */
+/* line 10, ../scss/common.scss */
 .nav {
   line-height: 4em;
 }
-/* line 16, ../scss/common.scss */
+/* line 11, ../scss/common.scss */
 .nav a {
   color: #FFF;
   margin-right: 0.5rem;
 }
-/* line 17, ../scss/common.scss */
+/* line 12, ../scss/common.scss */
 .nav a:after {
   content: "+";
   color: #921d46;
   font-size: 1.3rem;
   margin-left: 0.5rem;
 }
-/* line 18, ../scss/common.scss */
+/* line 13, ../scss/common.scss */
 .nav a:last-child:after {
   content: "\0020";
 }
 
-/* line 21, ../scss/common.scss */
+/* line 16, ../scss/common.scss */
 .logo {
   position: absolute;
   right: 5%;
   top: 0;
   width: 20%;
   height: 10rem;
-  background: url(/assets/logo.png) no-repeat;
+  background: url(img/logo.png) no-repeat;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -ms-background-size: 100% auto;
   background-size: 100% auto;
 }
 
-/* line 23, ../scss/common.scss */
+/* line 18, ../scss/common.scss */
 .content {
   padding: 0 16%;
   max-width: 1920px;
   min-width: 800px;
 }
 
-/* line 26, ../scss/common.scss */
+/* line 21, ../scss/common.scss */
 .footer {
   padding: 2em 0 2em;
   background-color: #131720;
+  max-width: 1920px;
+  min-width: 1000px;
 }
 
-/* line 27, ../scss/common.scss */
+/* line 22, ../scss/common.scss */
 .contact {
   margin: 0 15% 2.5em;
+  height: 3em;
   border-top: 1px solid #ffffff;
-  background: url(/assets/footer-logo.png) no-repeat center 2em;
+  background: url(img/footer-logo.png) no-repeat center 2em;
   padding-top: 9em;
   -webkit-background-size: 32% auto;
   -moz-background-size: 32% auto;
   -ms-background-size: 32% auto;
   background-size: 32% auto;
 }
-/* line 28, ../scss/common.scss */
+/* line 23, ../scss/common.scss */
 .contact a {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   width: 2em;
   height: 2em;
-  background: url(/assets/contact-icon.png) no-repeat;
+  background: url(img/contact-icon.png) no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 29, ../scss/common.scss */
+/* line 24, ../scss/common.scss */
 .contact a.tencent {
   margin-right: .5rem;
 }
-/* line 30, ../scss/common.scss */
+/* line 25, ../scss/common.scss */
 .contact a.sina {
   background-position: -2em 0;
   margin-right: .5rem;
 }
-/* line 31, ../scss/common.scss */
+/* line 26, ../scss/common.scss */
 .contact a.weixin {
   background-position: -4em 0;
 }
+/* line 27, ../scss/common.scss */
+.contact a:hover {
+  -webkit-transition: all 0.5s ease-in 0s;
+  -moz-transition: all 0.5s ease-in 0s;
+  -ms-transition: all 0.5s ease-in 0s;
+  transition: all 0.5s ease-in 0s;
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
 
-/* line 34, ../scss/common.scss */
+/* line 30, ../scss/common.scss */
 .info {
   margin-bottom: 1.5em;
   min-width: 800px;
 }
-/* line 35, ../scss/common.scss */
+/* line 31, ../scss/common.scss */
 .info i {
   vertical-align: middle;
   margin-right: .5rem;
   width: 2em;
   height: 2em;
-  background: url(/assets/info-icon.png) no-repeat;
+  background: url(img/info-icon.png) no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -ms-background-size: auto 100%;
   background-size: auto 100%;
 }
-/* line 36, ../scss/common.scss */
+/* line 32, ../scss/common.scss */
 .info i.tel {
   background-position: -2em 0;
 }
-/* line 37, ../scss/common.scss */
+/* line 33, ../scss/common.scss */
 .info i.mail {
   background-position: -4em 0;
 }
-/* line 39, ../scss/common.scss */
+/* line 35, ../scss/common.scss */
 .info li {
   margin-right: 3rem;
   display: inline-block;
 }
-/* line 40, ../scss/common.scss */
+/* line 36, ../scss/common.scss */
 .info li:last-child {
   margin-right: 0;
 }
 
 @media all and (max-width: 1280px) {
-  /* line 46, ../scss/common.scss */
+  /* line 42, ../scss/common.scss */
   .info li {
     text-align: left;
     margin-bottom: .5em;

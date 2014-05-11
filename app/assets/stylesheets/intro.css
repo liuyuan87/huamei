@@ -47,10 +47,27 @@ h2 sup {
 .feature li {
   margin-bottom: .5em;
 }
+.feature a{
+  color: #000;
+}
+.feature a:hover{
+  color: #000;
+}
 /* line 16, ../scss/intro.scss */
 .feature li h3 {
   margin-left: 3em;
+  cursor:pointer;
   position: relative;
+}
+.feature li h3:hover {
+  -webkit-transition: all 0.2s ease-in 0s;
+  -moz-transition: all 0.2s ease-in 0s;
+  -ms-transition: all 0.2s ease-in 0s;
+  transition: all 0.2s ease-in 0s;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
 /* line 17, ../scss/intro.scss */
 .feature li h3:after {

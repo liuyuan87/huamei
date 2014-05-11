@@ -12,7 +12,7 @@
 		<tr>
 			<td class="data_label">华语音乐榜：</td>
 			<td class="data_ipt">
-				<% 1.upto 8 do |i| %>
+				<% 1.upto 10 do |i| %>
 				<input type="text" name="sys_setting[setting][zh][<%= i %>]" value="<%= @setting["zh"][i] if @setting["zh"] && @setting["zh"][i] %>" class="new_ipt" /><br />
 				<% end %>
 			</td>
@@ -20,7 +20,7 @@
 		<tr>
 			<td class="data_label">外语音乐榜：</td>
 			<td class="data_ipt">
-				<% 1.upto 8 do |i| %>
+				<% 1.upto 10 do |i| %>
 				<input type="text" name="sys_setting[setting][fr][<%= i %>]" value="<%= @setting["fr"][i] if @setting["fr"] && @setting["fr"][i] %>" class="new_ipt" /><br />
 				<% end %>
 			</td>
