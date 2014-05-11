@@ -10,30 +10,33 @@
 			<td colspan="2" class="blank"></td>
 		</tr>
 		<tr>
-			<td class="data_label">华语音乐榜：</td>
-			<td class="data_ipt">
-				<% 1.upto 10 do |i| %>
-				<input type="text" name="sys_setting[setting][zh][<%= i %>]" value="<%= @setting["zh"][i] if @setting["zh"] && @setting["zh"][i] %>" class="new_ipt" /><br />
-				<% end %>
+			<td colspan="2" class="blank">
+				<table style="margin:0 auto;">
+					<tr>
+						<td>华语音乐榜</td>
+						<td>外语音乐榜</td>
+						<td>《华美夜色》简介</td>
+					</tr>
+					<tr>
+						<td class="data_ipt">
+							<% 1.upto 8 do |i| %>
+							<input type="text" name="sys_setting[setting][zh][<%= i %>]" value="<%= @setting["zh"][i.to_s] if @setting["zh"] && @setting["zh"][i.to_s] %>" class="new_ipt" /><br />
+							<% end %>
+						</td>
+						<td class="data_ipt">
+							<% 1.upto 8 do |i| %>
+							<input type="text" name="sys_setting[setting][fr][<%= i %>]" value="<%= @setting["fr"][i.to_s] if @setting["fr"] && @setting["fr"][i.to_s] %>" class="new_ipt" /><br />
+							<% end %>
+						</td>
+						<td>
+							<textarea name="sys_setting[setting][intro]" style="width:430px;height:270px;"><%= @setting["intro"] if @setting["intro"] %></textarea>
+						</td>
+					</tr>
+				</table>
 			</td>
 		</tr>
 		<tr>
-			<td class="data_label">外语音乐榜：</td>
-			<td class="data_ipt">
-				<% 1.upto 10 do |i| %>
-				<input type="text" name="sys_setting[setting][fr][<%= i %>]" value="<%= @setting["fr"][i] if @setting["fr"] && @setting["fr"][i] %>" class="new_ipt" /><br />
-				<% end %>
-			</td>
-		</tr>
-		<tr>
-			<td class="data_label">简介：</td>
-			<td class="data_ipt">
-				<textarea style="width:500px;height:300px;"><%= @setting["intro"] if @setting["intro"] %></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td class="data_sbt">
+			<td colspan="2" class="data_sbt" style="text-align:center;">
 				<input type="submit" name="submit" value="确定" />
 			</td>
 		</tr>
