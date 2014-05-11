@@ -20,14 +20,12 @@
 	<div class="item">
 		<h2 class="title hide-text">华美夜色 一周节目</h2>
 		<ul>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
-			<li>· 2014.02.24 爱情与事业</li>
+			<% @night_items.each do |item| %>
+			<li>· <%= item.title %></li>
+			<% end %>
+			<% (8 - @night_items.length).downto 1 do %>
+			<li></li>
+			<% end %>
 		</ul>
 		<img src="/assets/qrcode.jpg" alt="">
 	</div>
