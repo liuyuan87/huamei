@@ -35,6 +35,13 @@ Huamei::Application.routes.draw do
     
     resources :magazines
     
+    resources :night_cards do
+      resources :night_items
+    end
+    get "sys/nights"
+    post "sys/nights"
+    resources :night_presenters
+    
     get "sys/index_pics"
     post "sys/index_pics"
     

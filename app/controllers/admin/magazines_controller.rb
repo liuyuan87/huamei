@@ -15,6 +15,7 @@ class Admin::MagazinesController < Admin::Backend
   def create
     params.permit!
     @magazine = Magazine.new(params[:magazine])
+    @magazine.folder = Time.now.strftime("%Y%m%d%H%M%S")
     if @magazine.save
       t = Rails.root.join('public', @magazine.zip.to_s.sub('/', ''))
       `unzip #{t} -d #{Rails.root.join('public/upload/magazine', @magazine.folder, 'imgs')}`

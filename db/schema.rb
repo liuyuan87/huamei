@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130422041212) do
+ActiveRecord::Schema.define(version: 20130422041216) do
 
   create_table "admins", force: true do |t|
     t.string   "adminname"
@@ -53,6 +53,27 @@ ActiveRecord::Schema.define(version: 20130422041212) do
     t.string   "cover"
     t.string   "folder"
     t.string   "zip"
+    t.datetime "created_at"
+  end
+
+  create_table "night_cards", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+  end
+
+  create_table "night_items", force: true do |t|
+    t.integer  "night_card_id"
+    t.string   "title"
+    t.string   "cover"
+    t.string   "play_addr"
+    t.datetime "created_at"
+  end
+
+  create_table "night_presenters", force: true do |t|
+    t.string   "name"
+    t.string   "cover"
+    t.string   "weibo"
+    t.text     "info"
     t.datetime "created_at"
   end
 

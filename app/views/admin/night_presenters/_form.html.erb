@@ -2,13 +2,13 @@
 <div class="nav">
 	<div class="list-opts">
 		<div class="nav-links">
-			<a href="/admin/magazines">杂志管理</a>
-			<a href="/admin/magazines/new">添加 杂志</a>
+			<a href="/admin/night_presenters">主持人</a>
+			<a href="/admin/night_presenters/new">添加 主持人</a>
 		</div>
 	</div>
 </div>
 <div class="main">
-<%= form_for [:admin, @magazine], :html => { :multipart => true } do |f| %>
+<%= form_for [:admin, @night_presenter] do |f| %>
 <table class="newtable">
 	<thead>
 		<tr>
@@ -20,9 +20,9 @@
 			<td colspan="2" class="blank"></td>
 		</tr>
 		<tr>
-			<td class="data_label">标题：</td>
+			<td class="data_label">名称：</td>
 			<td class="data_ipt">
-				<%= f.text_field :title %>
+				<%= f.text_field :name %>
 			</td>
 		</tr>
 		<tr>
@@ -33,14 +33,18 @@
 				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button" name="upload" id="upload" value="本地上传"></span>
 			</td>
 		</tr>
-		<% if t != '修改' %>
 		<tr>
-			<td class="data_label">杂志Zip：</td>
-			<td class="data_ipt">
-				<%= f.file_field :zip %>
+			<td class="data_label">微博：</td>
+			<td>
+				<%= f.text_field :weibo, :class => "new_ipt" %>
 			</td>
 		</tr>
-		<% end %>
+		<tr>
+			<td class="data_label">简介：</td>
+			<td>
+				<%= f.text_area :info, :style => "width:600px;height:400px;" %>
+			</td>
+		</tr>
 		<tr>
 			<td>&nbsp;</td>
 			<td class="data_sbt">
@@ -55,7 +59,6 @@
 <% end %>
 </div>
 
-
 <script type="text/javascript">
 //<![CDATA[
 $(function(){	
@@ -63,7 +66,7 @@ $(function(){
 	editor.fileManagerJson = "/file_manager_json";
 	editor.uploadJson = "/upload_asset";
 	editor.extraFileUploadParams = {
-		'model_type' : 'magazine_covers'
+		'model_type' : 'night_presenter_covers'
 	};
 	KindEditor.loadStyle(editor.themesPath + 'default/default.css');
 	KindEditor.loadScript(editor.langPath + editor.langType + '.js');
@@ -72,10 +75,10 @@ $(function(){
 		editor.loadPlugin('filemanager', function() {
 			editor.plugin.filemanagerDialog({
 				viewType : 'VIEW',
-				dirName : 'magazine_covers',
+				dirName : 'night_presenter_covers',
 				clickFn : function(url, title) {
 					if (editor.dialogs.length > 0) {
-						$('#magazine_cover').val(url);
+						$('#night_presenter_cover').val(url);
 						editor.hideDialog();
 					}
 				}
@@ -88,7 +91,7 @@ $(function(){
 			editor.plugin.imageDialog({
 				showRemote: false,
 				clickFn : function(url, title, width, height, border, align) {
-					$('#magazine_cover').val(url);
+					$('#night_presenter_cover').val(url);
 					setTimeout(function() {
 						editor.hideDialog().focus();
 					}, 0);

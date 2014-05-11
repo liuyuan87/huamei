@@ -6,6 +6,7 @@ a{color:#006FFD;text-decoration:none;}
 a:hover{color:#006FFD;text-decoration:underline;}
 img{border:0px;}
 input, option, select, textarea, button {font-size: 12px;}
+textarea{border:1px solid #CCC;}
 .l{float:left;}
 .r{float:right;}
 .clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }
@@ -59,7 +60,7 @@ td.data_sbt input:hover, .btnSubmit:hover{background:#485B79;border:1px solid #3
 .setTable td.data_label{width:32%;text-align:right;color:#666;}
 .setTable td.data_check input{margin:0 4px -2px;}
 .setTable td.data_ipt{text-align:left;}
-.setTable td.data_ipt input{padding:4px 6px;width:200px;height:20px;line-height:20px;border:1px solid #CCC;border-radius:2px;font-size:12px;}
+.setTable td.data_ipt input{margin:2px 0;padding:4px 6px;width:200px;height:20px;line-height:20px;border:1px solid #CCC;border-radius:2px;font-size:12px;}
 .setTable td.data_ipt textarea{padding:8px 10px;width:360px;height:80px;border:1px solid #CCC;}
 
 .checkTable{border-collapse:collapse;border-spacing:0;border:1px solid #DDD;}
@@ -96,10 +97,4 @@ td.data_sbt input:hover, .btnSubmit:hover{background:#485B79;border:1px solid #3
 #topics_catalogs:hover i{border:6px solid #DDD;border-top:6px solid #333;border-bottom:0;}
 .topics_catalogs{position:absolute;top:31px;left:0;padding:5px 0;background:#EEE;border:1px solid #CCC;}
 .topics_catalogs li{padding:4px 0 4px 10px;width:109px;line-height:22px;text-align:left;}
-
-.product_imgs_tb tbody tr:hover td{background:#FFF;}
-.product_imgs{}
-.product_imgs li{float:left;display:inline;margin:10px;}
-.product_imgs li img{padding:8px;width:200px;height:200px;border:1px solid #EEE;}
-.product_imgs li p{line-height:22px;text-align:center;}
 

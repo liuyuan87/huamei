@@ -1,0 +1,54 @@
+<%= form_tag :action => "nights" do %>	
+<table class="setTable">
+	<thead>
+		<tr>
+			<th colspan="2">音乐榜</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">华语音乐榜：</td>
+			<td class="data_ipt">
+				<% 1.upto 8 do |i| %>
+				<input type="text" name="sys_setting[setting][zh][<%= i %>]" value="<%= @setting["zh"][i] if @setting["zh"] && @setting["zh"][i] %>" class="new_ipt" /><br />
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">外语音乐榜：</td>
+			<td class="data_ipt">
+				<% 1.upto 8 do |i| %>
+				<input type="text" name="sys_setting[setting][fr][<%= i %>]" value="<%= @setting["fr"][i] if @setting["fr"] && @setting["fr"][i] %>" class="new_ipt" /><br />
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">简介：</td>
+			<td class="data_ipt">
+				<textarea style="width:500px;height:300px;"><%= @setting["intro"] if @setting["intro"] %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="确定" />
+			</td>
+		</tr>
+		<% if !@result.nil? %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">result：</td>
+			<td class="data_result">保存成功。</td>
+		</tr>
+		<% end %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>

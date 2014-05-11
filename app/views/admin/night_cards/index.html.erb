@@ -1,0 +1,43 @@
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/night_cards">节目管理</a>
+			<a href="/admin/night_cards/new">添加 节目</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<table class="stdtable edtable">
+	<thead>
+		<tr>
+			<th width="10%">编号</th>
+			<th>名称</th>
+			<th width="40%">管理</th>
+		</tr>
+	</thead>
+	<tbody>
+	<%
+		if @night_cards.length>0
+			@night_cards.each do |t|
+	%>
+		<tr>
+			<td><%= t.id %></td>
+			<td><%= t.title %></td>
+			<td>
+				<a href="/admin/night_cards/<%= t.id %>/night_items">节目主题</a>|
+				<a href="/admin/night_cards/<%= t.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => t}, :confirm => "确定删除？", :method => "delete" %>
+			</td>
+		</tr>
+	<%
+			end
+		else
+	%>
+		<tr>
+			<td colspan="3" style="text-align:left;">&nbsp;还没有内容。</td>
+		</tr>
+	<%
+		end
+	%>
+	</tbody>
+</table>
+</div>

@@ -2,13 +2,15 @@
 <div class="nav">
 	<div class="list-opts">
 		<div class="nav-links">
-			<a href="/admin/magazines">杂志管理</a>
-			<a href="/admin/magazines/new">添加 杂志</a>
+			<a href="/admin/night_cards">节目管理</a>
+			<a href="/admin/night_cards/new">添加 节目</a>
+			<a href="/admin/night_cards/<%= @night_card.id %>/night_items"><%= @night_card.title %></a>
+			<a href="/admin/night_cards/<%= @night_card.id %>/night_items/new">添加 节目主题</a>
 		</div>
 	</div>
 </div>
 <div class="main">
-<%= form_for [:admin, @magazine], :html => { :multipart => true } do |f| %>
+<%= form_for [:admin, @night_card, @night_item], :html => { :multipart => true } do |f| %>
 <table class="newtable">
 	<thead>
 		<tr>
@@ -33,14 +35,12 @@
 				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button" name="upload" id="upload" value="本地上传"></span>
 			</td>
 		</tr>
-		<% if t != '修改' %>
 		<tr>
-			<td class="data_label">杂志Zip：</td>
+			<td class="data_label">文件：</td>
 			<td class="data_ipt">
-				<%= f.file_field :zip %>
+				<%= f.file_field :play_addr %>
 			</td>
 		</tr>
-		<% end %>
 		<tr>
 			<td>&nbsp;</td>
 			<td class="data_sbt">
@@ -55,7 +55,6 @@
 <% end %>
 </div>
 
-
 <script type="text/javascript">
 //<![CDATA[
 $(function(){	
@@ -63,7 +62,7 @@ $(function(){
 	editor.fileManagerJson = "/file_manager_json";
 	editor.uploadJson = "/upload_asset";
 	editor.extraFileUploadParams = {
-		'model_type' : 'magazine_covers'
+		'model_type' : 'night_item_covers'
 	};
 	KindEditor.loadStyle(editor.themesPath + 'default/default.css');
 	KindEditor.loadScript(editor.langPath + editor.langType + '.js');
@@ -72,10 +71,10 @@ $(function(){
 		editor.loadPlugin('filemanager', function() {
 			editor.plugin.filemanagerDialog({
 				viewType : 'VIEW',
-				dirName : 'magazine_covers',
+				dirName : 'night_item_covers',
 				clickFn : function(url, title) {
 					if (editor.dialogs.length > 0) {
-						$('#magazine_cover').val(url);
+						$('#night_item_cover').val(url);
 						editor.hideDialog();
 					}
 				}
@@ -88,7 +87,7 @@ $(function(){
 			editor.plugin.imageDialog({
 				showRemote: false,
 				clickFn : function(url, title, width, height, border, align) {
-					$('#magazine_cover').val(url);
+					$('#night_item_cover').val(url);
 					setTimeout(function() {
 						editor.hideDialog().focus();
 					}, 0);
