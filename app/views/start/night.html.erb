@@ -35,7 +35,7 @@
 	<div class="col">
 		<h4>|| 华语音乐榜</h4>	
 		<ol>
-			<% 1.upto 8 do |i| %>
+			<% 1.upto 10 do |i| %>
 			<li><%= @intro["zh"][i.to_s] %></li>
 			<% end %>
 		</ol>
@@ -43,7 +43,7 @@
 	<div class="col">
 		<h4>|| 外语音乐榜</h4>
 		<ol>
-			<% 1.upto 8 do |i| %>
+			<% 1.upto 10 do |i| %>
 			<li><%= @intro["fr"][i.to_s] %></li>
 			<% end %>
 		</ol>
@@ -82,6 +82,15 @@
 	</ul>
 </div>
 
-<script src="/assets/jquery-ui-1.8.17.custom.min.js"></script>
 <script src="/assets/night.js"></script>
+<script src="/assets/jquery-ui-1.8.17.custom.min.js"></script>
 <script src="/assets/music.js"></script>
+<script type="text/javascript">
+Music.playlist = [
+<%= @night_items.map{|t|"{title:'" + t.title + "', artist:'" + t.author + "', cover:'" + t.cover + "', mp3:'" + t.play_addr.to_s + "'}"}.join(",").html_safe %>
+];
+$(function(){
+	Music.init();
+	Music.loadMusic(0);
+});
+</script>

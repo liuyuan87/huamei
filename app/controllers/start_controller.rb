@@ -45,6 +45,7 @@ class StartController < ApplicationController
   end
   
   def night
+    @night_items = NightItem.all :order => "id desc", :limit => 8
     @intro = JSON.parse(SysSetting.find_by_stype("nights").setting)
     @night_presenters = NightPresenter.all :order => "id desc"
   end

@@ -1,244 +1,197 @@
-(function($){
-	// Settings
-	var repeat = localStorage.repeat || 0,
-		shuffle = localStorage.shuffle || 'false',
-		continous = true,
-		autoplay = false,
-		playlist = [{
-		    title: '倍儿爽',
-		    artist: '大张伟',
-		    cover: '/assets/cover.jpg',
-		    mp3: '/music/倍儿爽.mp3'
-		},{
-		    title: '生来彷徨',
-		    artist: '汪峰',
-		    cover: '/assets/index1.jpg',
-		    mp3: '/music/生来彷徨.mp3'
-		},{
-		    title: '时间都去哪儿了',
-		    artist: '王铮亮',
-		    cover: '/assets/index2.jpg',
-		    mp3: '/music/时间都去哪儿了.mp3'
-		},{
-		    title: '同桌的你 ',
-		    artist: '老狼',
-		    cover: '/assets/index3.jpg',
-		    mp3: '/music/同桌的你 .mp3'
-		},{
-		    title: '我们结婚吧',
-		    artist: '金莎，刘佳',
-		    cover: '/assets/index4.jpg',
-		    mp3: '/music/我们结婚吧.mp3'
-		},{
-		    title: '月亮惹的祸',
-		    artist: '张宇',
-		    cover: '/assets/opera.png',
-		    mp3: '/music/月亮惹的祸.mp3'
-		}];
-
-	// Load playlist
-	for (var i=0; i<playlist.length; i++){
-		var item = playlist[i];
-		$('#playlist').append('<li>'+item.artist+' - '+item.title+'</li>');
-	}
-
-	var time = new Date(),
-		currentTrack = shuffle === 'true' ? time.getTime() % playlist.length : 0,
-		trigger = false,
-		audio, timeout, isPlaying, playCounts;
-
-	var play = function(){
-		audio.play();
-		$('.playback').addClass('playing');
-		timeout = setInterval(updateProgress, 500);
-		isPlaying = true;
-	}
-
-	var pause = function(){
-		audio.pause();
-		$('.playback').removeClass('playing');
-		clearInterval(updateProgress);
-		isPlaying = false;
-	}
-
-	// Update progress
-	var setProgress = function(value){
-		var currentSec = parseInt(value%60) < 10 ? '0' + parseInt(value%60) : parseInt(value%60),
-			ratio = value / audio.duration * 100;
-
-		$('.timer').html(parseInt(value/60)+':'+currentSec);
-		$('.progress .pace').css('width', ratio + '%');
-		$('.progress .slider a').css('left', ratio + '%');
-	}
-
-	var updateProgress = function(){
-		setProgress(audio.currentTime);
-	}
-
-	// Progress slider
-	$('.progress .slider').slider({step: 0.1, slide: function(event, ui){
-		$(this).addClass('enable');
-		setProgress(audio.duration * ui.value / 100);
-		clearInterval(timeout);
-	}, stop: function(event, ui){
-		audio.currentTime = audio.duration * ui.value / 100;
-		$(this).removeClass('enable');
-		timeout = setInterval(updateProgress, 500);
-	}});
-
-	// Volume slider
-	var setVolume = function(value){
-		audio.volume = localStorage.volume = value;
-		$('.volume .pace').css('width', value * 100 + '%');
-		$('.volume .slider a').css('left', value * 100 + '%');
-	}
-
-	var volume = localStorage.volume || 0.5;
-	$('.volume .slider').slider({max: 1, min: 0, step: 0.01, value: volume, slide: function(event, ui){
-		setVolume(ui.value);
-		$(this).addClass('enable');
-		$('.mute').removeClass('enable');
-	}, stop: function(){
-		$(this).removeClass('enable');
-	}}).children('.pace').css('width', volume * 100 + '%');
-
-	$('.mute').click(function(){
-		if ($(this).hasClass('enable')){
-			setVolume($(this).data('volume'));
-			$(this).removeClass('enable');
-		} else {
-			$(this).data('volume', audio.volume).addClass('enable');
-			setVolume(0);
+var Music = {
+	init : function(){
+		this.shuffle = localStorage.shuffle || 'false';
+		this.repeat = localStorage.repeat || 0;
+		this.continous = true;
+		this.autoplay = false;
+	
+		// Load playlist
+		for (var i = 0, item; item = this.playlist[i]; i ++){
+			$('#playlist').append('<li>' + item.artist + ' - ' + item.title + '</li>');
 		}
-	});
-
-	// Switch track
-	var switchTrack = function(i){
-		if (i < 0){
-			track = currentTrack = playlist.length - 1;
-		} else if (i >= playlist.length){
-			track = currentTrack = 0;
-		} else {
-			track = i;
+		
+		this.currentTrack = this.shuffle === 'true' ? new Date().getTime() % this.playlist.length : 0,
+		this.trigger = false;
+			
+		this.volume = localStorage.volume || 0.5;
+		
+		if (this.shuffle === 'true') $('.shuffle').addClass('enable');
+		if (this.repeat == 1){
+			$('.repeat').addClass('once');
+		} else if (this.repeat == 2){
+			$('.repeat').addClass('all');
 		}
-
-		$('audio').remove();
-		loadMusic(track);
-		if (isPlaying == true) play();
-	}
-
-	// Shuffle
-	var shufflePlay = function(){
-		var time = new Date(),
-			lastTrack = currentTrack;
-		currentTrack = time.getTime() % playlist.length;
-		if (lastTrack == currentTrack) ++currentTrack;
-		switchTrack(currentTrack);
-	}
-
-	// Fire when track ended
-	var ended = function(){
-		pause();
-		audio.currentTime = 0;
-		playCounts++;
-		if (continous == true) isPlaying = true;
-		if (repeat == 1){
-			play();
-		} else {
-			if (shuffle === 'true'){
-				shufflePlay();
-			} else {
-				if (repeat == 2){
-					switchTrack(++currentTrack);
-				} else {
-					if (currentTrack < playlist.length) switchTrack(++currentTrack);
-				}
-			}
-		}
-	}
-
-	var beforeLoad = function(){
-		var endVal = this.seekable && this.seekable.length ? this.seekable.end(0) : 0;
-		$('.progress .loaded').css('width', (100 / (this.duration || 1) * endVal) +'%');
-	}
-
-	// Fire when track loaded completely
-	var afterLoad = function(){
-		if (autoplay == true) play();
-	}
-
-	// Load track
-	var loadMusic = function(i){
-		var item = playlist[i],
+		this.bind();
+	},
+	loadMusic : function(i){
+		this.currentTrack = i;
+		var item = this.playlist[i],
 			newaudio = $('<audio>').html('<source src="'+item.mp3+'"><source src="'+item.ogg+'">').appendTo('#player');
 		
 		$('.cover').html('<img src="'+item.cover+'" alt="'+item.title+'">');
 		$('.tag').html('<strong>'+item.title+'</strong><span class="artist">'+item.artist+'</span>');
 		$('#playlist li').removeClass('playing').eq(i).addClass('playing');
-		audio = newaudio[0];
-		audio.volume = $('.mute').hasClass('enable') ? 0 : volume;
-		audio.addEventListener('progress', beforeLoad, false);
-		audio.addEventListener('durationchange', beforeLoad, false);
-		audio.addEventListener('canplay', afterLoad, false);
-		audio.addEventListener('ended', ended, false);
-	}
+		this.audio = newaudio[0];
+		this.audio.volume = $('.mute').hasClass('enable') ? 0 : this.volume;
+		this.audio.addEventListener('progress', this.beforeLoad, false);
+		this.audio.addEventListener('durationchange', this.beforeLoad, false);
+		this.audio.addEventListener('canplay', this.afterLoad, false);
+		this.audio.addEventListener('ended', this.ended, false);
+	},
+	play : function(){
+		this.audio.play();
+		$('.playback').addClass('playing');
+		this.timeout = setInterval(this.updateProgress, 500);
+		this.isPlaying = true;
+	},
+	pause : function(){
+		this.audio.pause();
+		$('.playback').removeClass('playing');
+		clearInterval(this.updateProgress);
+		this.isPlaying = false;
+	},
+	setProgress : function(value){
+		var currentSec = parseInt(value%60) < 10 ? '0' + parseInt(value%60) : parseInt(value%60),
+			ratio = value / this.audio.duration * 100;
 
-	loadMusic(currentTrack);
-	$('.playback').on('click', function(){
-		if ($(this).hasClass('playing')){
-			pause();
+		$('.timer').html(parseInt(value/60)+':'+currentSec);
+		$('.progress .pace').css('width', ratio + '%');
+		$('.progress .slider a').css('left', ratio + '%');
+	},
+	updateProgress : function(){
+		Music.setProgress(Music.audio.currentTime);
+	},
+	setVolume : function(value){
+		this.audio.volume = localStorage.volume = value;
+		$('.volume .pace').css('width', value * 100 + '%');
+		$('.volume .slider a').css('left', value * 100 + '%');
+	},
+	switchTrack : function(i){
+		if (i < 0){
+			track = this.currentTrack = this.playlist.length - 1;
+		} else if (i >= this.playlist.length){
+			track = this.currentTrack = 0;
 		} else {
-			play();
+			track = i;
 		}
-	});
-	$('.rewind').on('click', function(){
-		if (shuffle === 'true'){
-			shufflePlay();
-		} else {
-			switchTrack(--currentTrack);
-		}
-	});
-	$('.fastforward').on('click', function(){
-		if (shuffle === 'true'){
-			shufflePlay();
-		} else {
-			switchTrack(++currentTrack);
-		}
-	});
-	$('#playlist li').each(function(i){
-		var _i = i;
-		$(this).on('click', function(){
-			switchTrack(_i);
-		});
-	});
 
-	if (shuffle === 'true') $('.shuffle').addClass('enable');
-	if (repeat == 1){
-		$('.repeat').addClass('once');
-	} else if (repeat == 2){
-		$('.repeat').addClass('all');
-	}
-
-	$('.repeat').on('click', function(){
-		if ($(this).hasClass('once')){
-			repeat = localStorage.repeat = 2;
-			$(this).removeClass('once').addClass('all');
-		} else if ($(this).hasClass('all')){
-			repeat = localStorage.repeat = 0;
-			$(this).removeClass('all');
+		$('audio').remove();
+		this.loadMusic(track);
+		if (this.isPlaying == true) this.play();
+	},
+	shufflePlay : function(){
+		var time = new Date(),
+			lastTrack = this.currentTrack;
+		this.currentTrack = time.getTime() % this.playlist.length;
+		if (lastTrack == this.currentTrack) ++this.currentTrack;
+		this.switchTrack(this.currentTrack);
+	},
+	ended : function(){
+		Music.pause();
+		Music.audio.currentTime = 0;
+		Music.playCounts++;
+		if (Music.continous == true) Music.isPlaying = true;
+		if (Music.repeat == 1){
+			Music.play();
 		} else {
-			repeat = localStorage.repeat = 1;
-			$(this).addClass('once');
+			if (Music.shuffle === 'true'){
+				Music.shufflePlay();
+			} else {
+				if (Music.repeat == 2){
+					Music.switchTrack(++Music.currentTrack);
+				} else {
+					if (Music.currentTrack < Music.playlist.length) Music.switchTrack(++Music.currentTrack);
+				}
+			}
 		}
-	});
-
-	$('.shuffle').on('click', function(){
-		if ($(this).hasClass('enable')){
-			shuffle = localStorage.shuffle = 'false';
-			$(this).removeClass('enable');
-		} else {
-			shuffle = localStorage.shuffle = 'true';
+	},
+	beforeLoad : function(){
+		var endVal = this.seekable && this.seekable.length ? this.seekable.end(0) : 0;
+		$('.progress .loaded').css('width', (100 / (Music.duration || 1) * endVal) +'%');
+	},
+	afterLoad : function(){
+		if (Music.autoplay == true) Music.play();
+	},
+	bind : function(){
+		var self = this;
+		$('.progress .slider').slider({step: 0.1, slide: function(event, ui){
 			$(this).addClass('enable');
-		}
-	});
-})(jQuery);
+			self.setProgress(self.audio.duration * ui.value / 100);
+			clearInterval(self.timeout);
+		}, stop: function(event, ui){
+			self.audio.currentTime = self.audio.duration * ui.value / 100;
+			$(this).removeClass('enable');
+			self.timeout = setInterval(self.updateProgress, 500);
+		}});
+	
+		$('.volume .slider').slider({max: 1, min: 0, step: 0.01, value: self.volume, slide: function(event, ui){
+			self.setVolume(ui.value);
+			$(this).addClass('enable');
+			$('.mute').removeClass('enable');
+		}, stop: function(){
+			$(this).removeClass('enable');
+		}}).children('.pace').css('width', self.volume * 100 + '%');
+	
+		$('.mute').click(function(){
+			if ($(this).hasClass('enable')){
+				self.setVolume($(this).data('volume'));
+				$(this).removeClass('enable');
+			} else {
+				$(this).data('volume', self.audio.volume).addClass('enable');
+				self.setVolume(0);
+			}
+		});
+	
+	
+		$('.playback').on('click', function(){
+			if ($(this).hasClass('playing')){
+				self.pause();
+			} else {
+				self.play();
+			}
+		});
+		$('.rewind').on('click', function(){
+			if (self.shuffle === 'true'){
+				self.shufflePlay();
+			} else {
+				self.switchTrack(--self.currentTrack);
+			}
+		});
+		$('.fastforward').on('click', function(){
+			if (self.shuffle === 'true'){
+				self.shufflePlay();
+			} else {
+				self.switchTrack(++self.currentTrack);
+			}
+		});
+		$('#playlist li').each(function(i){
+			var _i = i;
+			$(this).on('click', function(){
+				self.switchTrack(_i);
+			});
+		});
+	
+		$('.repeat').on('click', function(){
+			if ($(this).hasClass('once')){
+				self.repeat = localStorage.repeat = 2;
+				$(this).removeClass('once').addClass('all');
+			} else if ($(this).hasClass('all')){
+				self.repeat = localStorage.repeat = 0;
+				$(this).removeClass('all');
+			} else {
+				self.repeat = localStorage.repeat = 1;
+				$(this).addClass('once');
+			}
+		});
+	
+		$('.shuffle').on('click', function(){
+			if ($(this).hasClass('enable')){
+				self.shuffle = localStorage.shuffle = 'false';
+				$(this).removeClass('enable');
+			} else {
+				self.shuffle = localStorage.shuffle = 'true';
+				$(this).addClass('enable');
+			}
+		});
+	}
+};

@@ -19,12 +19,12 @@
 					</tr>
 					<tr>
 						<td class="data_ipt">
-							<% 1.upto 8 do |i| %>
+							<% 1.upto 10 do |i| %>
 							<input type="text" name="sys_setting[setting][zh][<%= i %>]" value="<%= @setting["zh"][i.to_s] if @setting["zh"] && @setting["zh"][i.to_s] %>" class="new_ipt" /><br />
 							<% end %>
 						</td>
 						<td class="data_ipt">
-							<% 1.upto 8 do |i| %>
+							<% 1.upto 10 do |i| %>
 							<input type="text" name="sys_setting[setting][fr][<%= i %>]" value="<%= @setting["fr"][i.to_s] if @setting["fr"] && @setting["fr"][i.to_s] %>" class="new_ipt" /><br />
 							<% end %>
 						</td>

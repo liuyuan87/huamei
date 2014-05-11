@@ -20,8 +20,8 @@
 	<div class="item">
 		<h2 class="title hide-text">华美夜色 一周节目</h2>
 		<ul>
-			<% @night_items.each do |item| %>
-			<li>· <%= item.title %></li>
+			<% @night_items.each_with_index do |item, i| %>
+			<li>· <a href="/night/<%= i+1 %>" target="_blank"><%= item.title %></a></li>
 			<% end %>
 			<% (8 - @night_items.length).downto 1 do %>
 			<li></li>
