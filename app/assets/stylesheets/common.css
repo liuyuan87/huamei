@@ -171,7 +171,7 @@ body {
   top: 0;
   width: 20%;
   height: 10rem;
-  background: url(img/logo.png) no-repeat;
+  background: url(/assets/logo.png) no-repeat;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -ms-background-size: 100% auto;
@@ -198,7 +198,7 @@ body {
   margin: 0 15% 2.5em;
   height: 3em;
   border-top: 1px solid #ffffff;
-  background: url(img/footer-logo.png) no-repeat center 2em;
+  background: url(/assets/footer-logo.png) no-repeat center 2em;
   padding-top: 9em;
   -webkit-background-size: 32% auto;
   -moz-background-size: 32% auto;
@@ -211,7 +211,7 @@ body {
   vertical-align: middle;
   width: 2em;
   height: 2em;
-  background: url(img/contact-icon.png) no-repeat;
+  background: url(/assets/contact-icon.png) no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -ms-background-size: auto 100%;
@@ -253,7 +253,7 @@ body {
   margin-right: .5rem;
   width: 2em;
   height: 2em;
-  background: url(img/info-icon.png) no-repeat;
+  background: url(/assets/info-icon.png) no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -ms-background-size: auto 100%;
