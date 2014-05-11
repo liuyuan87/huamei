@@ -1,9 +1,7 @@
 class Admin::NightItemsController < Admin::Backend
   
-  before_action :find_night_card
-  
   def index
-    @night_items = @night_card.night_items
+    @night_items = NightItem.all :order => "id desc"
   end
 
   def new
@@ -17,9 +15,8 @@ class Admin::NightItemsController < Admin::Backend
   def create
     params.permit!
     @night_item = NightItem.new(params[:night_item])
-    @night_item.night_card = @night_card
     if @night_item.save
-      redirect_to [:admin, :night_card, :night_items]
+      redirect_to [:admin, :night_items]
     else
       render :action => "new"
     end
@@ -29,19 +26,13 @@ class Admin::NightItemsController < Admin::Backend
     params.permit!
     @night_item = NightItem.find(params[:id])
     @night_item.update_attributes(params[:night_item])
-    redirect_to [:admin, :night_card, :night_items]
+    redirect_to [:admin, :night_items]
   end
 
   def destroy
     @night_item = NightItem.find(params[:id])
     @night_item.destroy
-    redirect_to [:admin, :night_card, :night_items]
-  end
-  
-private
-
-  def find_night_card
-    @night_card = NightCard.find(params[:night_card_id])
+    redirect_to [:admin, :night_items]
   end
   
 end
