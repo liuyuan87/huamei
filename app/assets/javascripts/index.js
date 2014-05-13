@@ -82,7 +82,7 @@ $(function(){
 		curNum = $(dNums[fl_i]);
 		curNum.addClass('cur');
 		clearTimeout(flashpics_timer);
-		flashpics_timer = setTimeout(fn_flashpics, 3000);
+		flashpics_timer = setTimeout(fn_flashpics, 5000);
 	}
 	fn_flashpics();
 	

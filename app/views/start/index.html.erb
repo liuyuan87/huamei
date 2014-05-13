@@ -1,10 +1,4 @@
 <%= stylesheet_link_tag    "index", media: "all", "data-turbolinks-track" => true %>
-<style>
-#figure{position:relative;}
-#figure span{position:absolute;bottom:1px;left:51%;}
-#figure i{margin:0 1px;padding:2px 4px;height:12px;line-height:12px;border:1px solid #CCC;background:#FFF;font-style:normal;font-size:12px;color:#222;cursor:pointer;}
-#figure i.cur{background:#FF0000;color:#FFF;}
-</style>
 <div class="content">
 	<h2 class="news">NEWS</h2>
 	<figure id="figure">
@@ -14,7 +8,7 @@
 		<% end %>
 		<% end %>
 		<% 1.upto 4 do |i| %>
-		<img width="19%" height="49.5%" src="<%= @index_pics2["img_url"][i.to_s] %>" alt="" style="background:#000;">
+		<img width="19%" height="49%" src="<%= @index_pics2["img_url"][i.to_s] %>" alt="" style="background:#000;">
 		<% end %>
 	</figure>
 	<div class="item">

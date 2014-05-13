@@ -13,7 +13,7 @@ body {
 }
 /* line 6, ../scss/index.scss */
 .content figure {
-  height: 24em;
+  height: 30em;
   margin-bottom: 3.5em;
 }
 /* line 7, ../scss/index.scss */
@@ -62,3 +62,7 @@ body {
   line-height: 1.4;
   margin-bottom: .5rem;
 }
+#figure{position:relative;}
+#figure span{position:absolute;bottom:.5rem;left:0; width:59%; text-align: right; line-height:1;}
+#figure i{ vertical-align: middle; margin-right:.2rem; font-family: arial; text-align: center; font-size:12px; width:18px; height:18px;line-height:18px;background:#131720;font-style:normal;color:#FFF;cursor:pointer;}
+#figure i.cur{background:#921D46; }
