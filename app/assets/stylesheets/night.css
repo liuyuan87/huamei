@@ -131,7 +131,7 @@ body {
   text-align: justify;
 }
 
-/* line 28, ../scss/night.scss */
+/* line 35, ../scss/night.scss */
 .person {
   margin: 0 20% 5em;
   min-width: 900px;
@@ -144,13 +144,13 @@ body {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  width: 32%;
+  width: 28%;
   cursor: pointer;
   position: relative;
 }
 /* line 30, ../scss/night.scss */
 .person li:nth-child(2n) {
-  margin-left: 5%;
+  margin-left: 10%;
 }
 /* line 31, ../scss/night.scss */
 .person li:nth-child(2n) img {
@@ -173,6 +173,7 @@ body {
 /* line 35, ../scss/night.scss */
 .person li.active img {
   max-width: 35%;
+  margin-right:4%;
 }
 /* line 36, ../scss/night.scss */
 .person li.active strong {
@@ -188,14 +189,14 @@ body {
 }
 /* line 42, ../scss/night.scss */
 .person strong {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: normal;
   white-space: nowrap;
   line-height: 2;
   padding: 0 1em;
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 0;
   margin-top: -1em;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -216,10 +217,13 @@ body {
   -ms-background-size: 100% auto;
   background-size: 100% auto;
 }
+.person a:hover{
+  color: rgba(0, 0, 0, 0);
+}
+
 /* line 45, ../scss/night.scss */
 .person img {
-  max-width: 100%;
-  margin-right: 4%;
+  width: 100%;
   vertical-align: top;
 }
 /* line 46, ../scss/night.scss */

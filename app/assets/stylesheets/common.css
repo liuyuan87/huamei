@@ -152,6 +152,9 @@ body {
   color: #FFF;
   margin-right: 0.5rem;
 }
+.nav a:hover{
+  color: #359DCE;
+}
 /* line 12, ../scss/common.scss */
 .nav a:after {
   content: "+";
@@ -187,8 +190,9 @@ body {
 
 /* line 21, ../scss/common.scss */
 .footer {
+  text-align: center;
   padding: 2em 0 2em;
-  background-color: #131720;
+  background-color: #1b202b;
   max-width: 1920px;
   min-width: 1000px;
 }

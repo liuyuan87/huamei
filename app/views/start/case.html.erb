@@ -7,8 +7,8 @@
 	<% end %>
 	<ul class="case-list">
 		<% @cases.each do |c| %><li>
-			<a href="<%= c.show_url %>"><img src="<%= c.pic %>" alt=""></a>
-			<h3><%= c.title %></h3>
+			<a href="<%= c.show_url %>"><img src="<%= c.pic %>" alt="<%= c.title %>案例封面"></a>
+			<h3><a href="<%= c.show_url %>"><%= c.title %></a></h3>
 			<p><%= c.case_tags.map{|t|"<a href=\"/case_tag/" + t.name + "\">" + t.name + "</a>"}.join("／").html_safe %></p>
 		</li><% end -%>
 	</ul>
