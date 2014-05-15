@@ -28,6 +28,12 @@
 			</td>
 		</tr>
 		<tr>
+			<td class="data_label">链接地址<%= i %>：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][link][<%= i %>]" value="<%= @setting["link"][i.to_s] if @setting["link"] %>" class="new_ipt" />
+			</td>
+		</tr>
+		<tr>
 			<td class="data_label">说明<%= i %>：</td>
 			<td class="data_ipt">
 				<input type="text" name="sys_setting[setting][title][<%= i %>]" value="<%= @setting["title"][i.to_s] if @setting["title"] %>" class="new_ipt" />

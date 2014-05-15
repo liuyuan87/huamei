@@ -2,7 +2,7 @@
 <div class="content">
 	<p class="intro"><%= @intro %></p>
 	<ul class="case-list">
-		<% 1.upto 3 do |i| -%><li><img src="<%= @intro_pics["img_url"][i.to_s] %>" alt="<%= @intro_pics["title"][i.to_s] %>"></li><% end %>
+		<% 1.upto 3 do |i| -%><li><a href="<%= @intro_pics["link"][i.to_s] %>" target="_blank"><img src="<%= @intro_pics["img_url"][i.to_s] %>" alt="<%= @intro_pics["title"][i.to_s] %>"></a></li><% end %>
 	</ul>
 	<h2>公司动态<sup>Company Everts</sup></h2>
 	<ul class="event-list">
