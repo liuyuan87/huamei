@@ -24,7 +24,9 @@ figure img {
   text-align: left;
   margin-bottom: 1.5em;
 }
-
+.contact-us h2{
+  font-size: 1.2em;
+}
 /* line 9, ../scss/contact.scss */
 .social {
   font-size: .8em;

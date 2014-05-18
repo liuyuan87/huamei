@@ -38,7 +38,7 @@
 			<td class="data_label">杂志Zip：</td>
 			<td class="data_ipt">
 				<%= f.file_field :zip %>
-				<span style="display:block;margin-top:6px;color:#999;">所有杂志图片打包为zip格式，图片格式为jpg，尺寸比例630*855</span>
+				<p style="margin-top:6px;color:#999;">一期杂志由多张图片组成，每张图片格式为.jpg，尺寸630px * 855px<br>命名成1.jpg，2.jpg…实现排序，所有图片打包成一个magazine.zip文件上传</p>
 			</td>
 		</tr>
 		<% end %>
