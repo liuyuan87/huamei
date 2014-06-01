@@ -8,6 +8,6 @@ class IndexPicUploader2 < AssetUploader
     "upload/index_pics2"
   end
   
-  process :resize_to_fill => [185, 285]
+  process :resize_to_fill => [246, 294]
 
 end

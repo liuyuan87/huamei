@@ -8,6 +8,6 @@ class IntroPicUploader < AssetUploader
     "upload/intro_pics"
   end
   
-  process :resize_to_fill => [291, 192]
+  process :resize_to_fill => [389, 256]
 
 end
