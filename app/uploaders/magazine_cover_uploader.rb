@@ -8,6 +8,6 @@ class MagazineCoverUploader < AssetUploader
     "upload/magazine_covers"
   end
   
-  process :resize_to_fill => [320, 434]
+  process :resize_to_fill => [427, 580]
 
 end
