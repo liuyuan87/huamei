@@ -38,11 +38,11 @@
 			// {String} Right arrow
 			arrowRightClass: 'slider-arrow--right',
 			// {String} Right arrow text
-			arrowRightText: 'next',
+			arrowRightText: '<i></i>next',
 			// {String} Left arrow
 			arrowLeftClass: 'slider-arrow--left',
 			// {String} Left arrow text
-			arrowLeftText: 'prev',
+			arrowLeftText: '<i></i>prev',
 
 			/**
 			 * {Bool or String} Show/hide/appendTo bullets navigation

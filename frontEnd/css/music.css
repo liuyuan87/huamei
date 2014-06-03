@@ -151,7 +151,7 @@
 
 /* line 117, ../scss/music.scss */
 .slider {
-  background-color: #FFF;
+  background-color: #9B9B9B;
   height: 5px;
   position: relative;
   cursor: pointer;
@@ -162,12 +162,15 @@
 }
 /* line 127, ../scss/music.scss */
 .slider a {
-  width: 5px;
-  height: 5px;
-  background: #008eff;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #fff;
+  top:-2px;
+  outline: none;
   margin-left: -2.5px;
   position: absolute;
-  opacity: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.7);
 }
 /* line 135, ../scss/music.scss */
 .slider .pace {

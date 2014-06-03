@@ -1,3 +1,6 @@
+.content{
+  margin-bottom:3em;
+}
 /* line 3, ../scss/magazine.scss */
 body {
   background-image: url(/assets/magazine-bg.png);

@@ -162,11 +162,14 @@
 }
 /* line 127, ../scss/music.scss */
 .slider a {
-  width: 5px;
-  height: 5px;
-  background: #008eff;
+  width: 10px;
+  height: 10px;
+  background: rgba(72,110,173,.5);
+  box-shadow: 0 2px 4px rgba(0,0,0,.7);
+  border-radius: 5px;
   margin-left: -2.5px;
   position: absolute;
+  top: -2px;
   opacity: 0;
 }
 /* line 135, ../scss/music.scss */
