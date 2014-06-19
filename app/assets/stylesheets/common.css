@@ -199,6 +199,7 @@ body {
 
 /* line 22, ../scss/common.scss */
 .contact {
+  position: relative;
   margin: 0 15% 2.5em;
   height: 3em;
   border-top: 1px solid #ffffff;
@@ -208,6 +209,14 @@ body {
   -moz-background-size: 32% auto;
   -ms-background-size: 32% auto;
   background-size: 32% auto;
+}
+.contact img{
+  display: none;
+  width:10em;
+  height:10em;
+  position:absolute;
+  top:20%;
+  right:10%;
 }
 /* line 23, ../scss/common.scss */
 .contact a {
@@ -234,16 +243,12 @@ body {
 .contact a.weixin {
   background-position: -4em 0;
 }
+.contact a.weixin:hover+img{
+  display:block;
+}
 /* line 27, ../scss/common.scss */
 .contact a:hover {
-  -webkit-transition: all 0.5s ease-in 0s;
-  -moz-transition: all 0.5s ease-in 0s;
-  -ms-transition: all 0.5s ease-in 0s;
-  transition: all 0.5s ease-in 0s;
-  -webkit-transform: rotateY(360deg);
-  -moz-transform: rotateY(360deg);
-  -ms-transform: rotateY(360deg);
-  transform: rotateY(360deg);
+  opacity:.8;
 }
 
 /* line 30, ../scss/common.scss */

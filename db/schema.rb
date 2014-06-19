@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130422041216) do
     t.string   "pic"
     t.string   "intro"
     t.text     "content"
-    t.integer  "is_hot",     default: 0
+    t.integer  "is_hot"
     t.datetime "created_at"
   end
 
@@ -56,9 +56,14 @@ ActiveRecord::Schema.define(version: 20130422041216) do
     t.datetime "created_at"
   end
 
-  create_table "night_items", force: true do |t|
+  create_table "night_cards", force: true do |t|
     t.string   "title"
-    t.string   "author"
+    t.datetime "created_at"
+  end
+
+  create_table "night_items", force: true do |t|
+    t.integer  "night_card_id"
+    t.string   "title"
     t.string   "cover"
     t.string   "play_addr"
     t.datetime "created_at"
