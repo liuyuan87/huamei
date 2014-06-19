@@ -4,11 +4,11 @@
 	<figure id="figure">
 		<% 1.upto 5 do |i| %>
 		<% if !@index_pics["img_url"][i.to_s].blank? %>
-		<img width="59%" height="100%" src="<%= @index_pics["img_url"][i.to_s] %>" alt="" class="flashpic" style="display:none;background:#000;">
+		<a href="<%= @index_pics["link_url"][i.to_s] %>"><img width="59%" height="100%" src="<%= @index_pics["img_url"][i.to_s] %>" alt="" class="flashpic" style="display:none;background:#000;"></a>
 		<% end %>
 		<% end %>
 		<% 1.upto 4 do |i| %>
-		<img width="19%" height="49%" src="<%= @index_pics2["img_url"][i.to_s] %>" alt="" style="background:#000;">
+		<a href="<%= @index_pics["link_url"][i.to_s] %>"><img width="19%" height="49%" src="<%= @index_pics2["img_url"][i.to_s] %>" alt="" style="background:#000;"></a>
 		<% end %>
 	</figure>
 	<div class="item">
