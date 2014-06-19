@@ -116,7 +116,38 @@ body {
 .weixin-sao img {
   max-width: 100%;
 }
-
+#share{
+  position: absolute;
+  left:19em;
+  top:0;
+}
+#share a{
+  display:block;
+  float: none;
+  font-size: inherit;
+  padding-left:0;
+  margin:0 0 .3em 0;
+  background:url(/assets/share.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
+  width:2em;
+  height:2em;
+  cursor: pointer;
+}
+#share .weibo{
+  background-position:0 -5.8em; 
+}
+#share .weixin{
+  background-position:0 -1.9em; 
+}
+#share .qq{
+  background-position:0 -3.9em; 
+}
+#share .renren{
+  background-position:0 0.1em; 
+}
 /* line 23, ../scss/night.scss */
 .music {
   margin-bottom: 5em;
