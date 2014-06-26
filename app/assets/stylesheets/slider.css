@@ -1,3 +1,42 @@
+#share{
+  background-color: #486e85;
+  color: #FFF;
+  padding:0 1.5rem;
+  display: inline-block;
+  margin-left:16%;
+  margin-bottom:.5rem;
+}
+#share:after{content:"\0020";}
+#share strong{font-size:1.5rem; font-weight:normal;border-bottom:1px solid #FFF;padding-right:1rem;}
+#share sub{font-size:1rem;vertical-align: baseline;}
+#share a{
+  display:inline-block;
+  float: none;
+  font-size: inherit;
+  padding-left:0;
+  vertical-align: text-bottom;
+  margin:0 0 0 .4em;
+  background:url(/assets/share.png) no-repeat;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -ms-background-size: 100% auto;
+  background-size: 100% auto;
+  width:2em;
+  height:2em;
+  cursor: pointer;
+}
+#share .weibo{
+  background-position:0 -5.9em; 
+}
+#share .weixin{
+  background-position:0 -1.95em; 
+}
+#share .qq{
+  background-position:0 -3.9em; 
+}
+#share .renren{
+  background-position:0 0.1em; 
+}
 .slider{
 	overflow:hidden;
 	position: relative;

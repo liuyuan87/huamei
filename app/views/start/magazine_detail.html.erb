@@ -1,4 +1,11 @@
 <%= stylesheet_link_tag    "slider", media: "all", "data-turbolinks-track" => true %>
+<div id="share" class="bdsharebuttonbox" data-tag="share_1">
+	<strong>杂志<sub>分享</sub></strong>
+	<a class="weibo" title="新浪微博" data-cmd="tsina"></a>
+	<a class="weixin" title="微信" data-cmd="weixin"></a>
+	<a class="qq" title="QQ空间" data-cmd="qzone"></a>
+	<a class="renren" title="人人网" data-cmd="renren"></a>
+</div>
 <div class="content">
 	<div class="slider">
 		<ul class="slides">
@@ -6,7 +13,6 @@
 		</ul>
 	</div>
 </div>
-
 <script src="/assets/jquery.glide.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -17,4 +23,15 @@ $(function(){
 		touchDistance: 80
 	});
 });
+</script>
+<script>
+	window._bd_share_config = {
+		common : {
+			bdText : '《华美时代·校园生活专刊》又出新刊了，内容非常精彩哦！这事你的小伙伴知道吗？共享青春生活，只在华美时代！#华美时代#'
+		},
+		share : [{
+			"bdSize" : 16
+		}]
+	}
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
