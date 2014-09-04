@@ -3,7 +3,7 @@ class StartController < ApplicationController
   def index
     @index_pics = JSON.parse(SysSetting.find_by_stype("index_pics").setting)
     @index_pics2 = JSON.parse(SysSetting.find_by_stype("index_pics2").setting)
-    @night_items = NightItem.all :order => "id desc" #, :limit => 8
+    @night_items = NightItem.all :order => "id desc", :limit => 8
   end
   
   def intro
@@ -45,7 +45,7 @@ class StartController < ApplicationController
   end
   
   def night
-    @night_items = NightItem.all :order => "id desc", :limit => 8
+    @night_items = NightItem.all :order => "id desc", :limit => 20
     @intro = JSON.parse(SysSetting.find_by_stype("nights").setting)
     @night_presenters = NightPresenter.all :order => "id desc"
   end
