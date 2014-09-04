@@ -185,7 +185,9 @@
 
 /* line 144, ../scss/music.scss */
 #playlist {
-  width: 15em;
+  width: 17rem;
+  height:12rem;
+  overflow-y: auto;
   position: relative;
 }
 /* line 147, ../scss/music.scss */
